@@ -1,0 +1,394 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=17060, tid=0x0000000000000ec4
+#
+# JRE version:  (8.0_242-b08) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.242-b08 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000031c6800):  JavaThread "Unknown thread" [_thread_in_vm, id=3780, stack(0x0000000003080000,0x0000000003180000)]
+
+Stack: [0x0000000003080000,0x0000000003180000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000031c6800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=3780, stack(0x0000000003080000,0x0000000003180000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c3600000, size: 4042 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 75776K, used 1300K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 2% used [0x000000076bd00000,0x000000076be451f8,0x000000076fc80000)
+  from space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+  to   space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+ ParOldGen       total 173568K, used 0K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3600000,0x00000006cdf80000)
+ Metaspace       used 874K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 74K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000012640000,0x0000000012e30000] byte_map_base: 0x000000000f025000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005e7dff30
+ Begin Bits: [0x0000000013b80000, 0x0000000017aa8000)
+ End Bits:   [0x0000000017aa8000, 0x000000001b9d0000)
+
+Polling page: 0x0000000001330000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000003280000, 0x00000000034f0000, 0x0000000012280000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (216 events):
+Event: 0.063 loading class java/lang/Object
+Event: 0.076 loading class java/lang/Object done
+Event: 0.076 loading class java/lang/String
+Event: 0.076 loading class java/io/Serializable
+Event: 0.077 loading class java/io/Serializable done
+Event: 0.077 loading class java/lang/Comparable
+Event: 0.077 loading class java/lang/Comparable done
+Event: 0.077 loading class java/lang/CharSequence
+Event: 0.077 loading class java/lang/CharSequence done
+Event: 0.078 loading class java/lang/String done
+Event: 0.078 loading class java/lang/Class
+Event: 0.079 loading class java/lang/reflect/GenericDeclaration
+Event: 0.079 loading class java/lang/reflect/AnnotatedElement
+Event: 0.079 loading class java/lang/reflect/AnnotatedElement done
+Event: 0.079 loading class java/lang/reflect/GenericDeclaration done
+Event: 0.079 loading class java/lang/reflect/Type
+Event: 0.079 loading class java/lang/reflect/Type done
+Event: 0.080 loading class java/lang/Class done
+Event: 0.080 loading class java/lang/Cloneable
+Event: 0.080 loading class java/lang/Cloneable done
+Event: 0.080 loading class java/lang/ClassLoader
+Event: 0.082 loading class java/lang/ClassLoader done
+Event: 0.082 loading class java/lang/System
+Event: 0.082 loading class java/lang/System done
+Event: 0.082 loading class java/lang/Throwable
+Event: 0.083 loading class java/lang/Throwable done
+Event: 0.083 loading class java/lang/Error
+Event: 0.083 loading class java/lang/Error done
+Event: 0.083 loading class java/lang/ThreadDeath
+Event: 0.083 loading class java/lang/ThreadDeath done
+Event: 0.083 loading class java/lang/Exception
+Event: 0.083 loading class java/lang/Exception done
+Event: 0.083 loading class java/lang/RuntimeException
+Event: 0.084 loading class java/lang/RuntimeException done
+Event: 0.084 loading class java/lang/SecurityManager
+Event: 0.084 loading class java/lang/SecurityManager done
+Event: 0.084 loading class java/security/ProtectionDomain
+Event: 0.085 loading class java/security/ProtectionDomain done
+Event: 0.085 loading class java/security/AccessControlContext
+Event: 0.085 loading class java/security/AccessControlContext done
+Event: 0.085 loading class java/security/SecureClassLoader
+Event: 0.085 loading class java/security/SecureClassLoader done
+Event: 0.085 loading class java/lang/ClassNotFoundException
+Event: 0.086 loading class java/lang/ReflectiveOperationException
+Event: 0.086 loading class java/lang/ReflectiveOperationException done
+Event: 0.086 loading class java/lang/ClassNotFoundException done
+Event: 0.086 loading class java/lang/NoClassDefFoundError
+Event: 0.086 loading class java/lang/LinkageError
+Event: 0.086 loading class java/lang/LinkageError done
+Event: 0.086 loading class java/lang/NoClassDefFoundError done
+Event: 0.086 loading class java/lang/ClassCastException
+Event: 0.086 loading class java/lang/ClassCastException done
+Event: 0.086 loading class java/lang/ArrayStoreException
+Event: 0.086 loading class java/lang/ArrayStoreException done
+Event: 0.086 loading class java/lang/VirtualMachineError
+Event: 0.086 loading class java/lang/VirtualMachineError done
+Event: 0.086 loading class java/lang/OutOfMemoryError
+Event: 0.087 loading class java/lang/OutOfMemoryError done
+Event: 0.087 loading class java/lang/StackOverflowError
+Event: 0.087 loading class java/lang/StackOverflowError done
+Event: 0.087 loading class java/lang/IllegalMonitorStateException
+Event: 0.087 loading class java/lang/IllegalMonitorStateException done
+Event: 0.087 loading class java/lang/ref/Reference
+Event: 0.087 loading class java/lang/ref/Reference done
+Event: 0.087 loading class java/lang/ref/SoftReference
+Event: 0.088 loading class java/lang/ref/SoftReference done
+Event: 0.088 loading class java/lang/ref/WeakReference
+Event: 0.088 loading class java/lang/ref/WeakReference done
+Event: 0.088 loading class java/lang/ref/FinalReference
+Event: 0.088 loading class java/lang/ref/FinalReference done
+Event: 0.088 loading class java/lang/ref/PhantomReference
+Event: 0.088 loading class java/lang/ref/PhantomReference done
+Event: 0.088 loading class sun/misc/Cleaner
+Event: 0.089 loading class sun/misc/Cleaner done
+Event: 0.089 loading class java/lang/ref/Finalizer
+Event: 0.089 loading class java/lang/ref/Finalizer done
+Event: 0.089 loading class java/lang/ref/ReferenceQueue
+Event: 0.089 loading class java/lang/ref/ReferenceQueue done
+Event: 0.089 loading class java/lang/Thread
+Event: 0.090 loading class java/lang/Runnable
+Event: 0.090 loading class java/lang/Runnable done
+Event: 0.090 loading class java/lang/Thread done
+Event: 0.090 loading class java/lang/ThreadGroup
+Event: 0.091 loading class java/lang/Thread$UncaughtExceptionHandler
+Event: 0.091 loading class java/lang/Thread$UncaughtExceptionHandler done
+Event: 0.091 loading class java/lang/ThreadGroup done
+Event: 0.091 loading class java/util/Properties
+Event: 0.091 loading class java/util/Hashtable
+Event: 0.092 loading class java/util/Map
+Event: 0.092 loading class java/util/Map done
+Event: 0.093 loading class java/util/Dictionary
+Event: 0.093 loading class java/util/Dictionary done
+Event: 0.093 loading class java/util/Hashtable done
+Event: 0.093 loading class java/util/Properties done
+Event: 0.093 loading class java/lang/reflect/AccessibleObject
+Event: 0.094 loading class java/lang/reflect/AccessibleObject done
+Event: 0.094 loading class java/lang/reflect/Field
+Event: 0.094 loading class java/lang/reflect/Member
+Event: 0.094 loading class java/lang/reflect/Member done
+Event: 0.094 loading class java/lang/reflect/Field done
+Event: 0.094 loading class java/lang/reflect/Parameter
+Event: 0.095 loading class java/lang/reflect/Parameter done
+Event: 0.095 loading class java/lang/reflect/Method
+Event: 0.095 loading class java/lang/reflect/Executable
+Event: 0.096 loading class java/lang/reflect/Executable done
+Event: 0.096 loading class java/lang/reflect/Method done
+Event: 0.096 loading class java/lang/reflect/Constructor
+Event: 0.096 loading class java/lang/reflect/Constructor done
+Event: 0.096 loading class sun/reflect/MagicAccessorImpl
+Event: 0.096 loading class sun/reflect/MagicAccessorImpl done
+Event: 0.096 loading class sun/reflect/MethodAccessorImpl
+Event: 0.096 loading class sun/reflect/MethodAccessor
+Event: 0.097 loading class sun/reflect/MethodAccessor done
+Event: 0.097 loading class sun/reflect/MethodAccessorImpl done
+Event: 0.097 loading class sun/reflect/ConstructorAccessorImpl
+Event: 0.097 loading class sun/reflect/ConstructorAccessor
+Event: 0.097 loading class sun/reflect/ConstructorAccessor done
+Event: 0.097 loading class sun/reflect/ConstructorAccessorImpl done
+Event: 0.097 loading class sun/reflect/DelegatingClassLoader
+Event: 0.097 loading class sun/reflect/DelegatingClassLoader done
+Event: 0.097 loading class sun/reflect/ConstantPool
+Event: 0.097 loading class sun/reflect/ConstantPool done
+Event: 0.097 loading class sun/reflect/UnsafeStaticFieldAccessorImpl
+Event: 0.097 loading class sun/reflect/UnsafeFieldAccessorImpl
+Event: 0.098 loading class sun/reflect/FieldAccessorImpl
+Event: 0.098 loading class sun/reflect/FieldAccessor
+Event: 0.098 loading class sun/reflect/FieldAccessor done
+Event: 0.098 loading class sun/reflect/FieldAccessorImpl done
+Event: 0.098 loading class sun/reflect/UnsafeFieldAccessorImpl done
+Event: 0.098 loading class sun/reflect/UnsafeStaticFieldAccessorImpl done
+Event: 0.098 loading class sun/reflect/CallerSensitive
+Event: 0.098 loading class java/lang/annotation/Annotation
+Event: 0.098 loading class java/lang/annotation/Annotation done
+Event: 0.099 loading class sun/reflect/CallerSensitive done
+Event: 0.099 loading class java/lang/invoke/DirectMethodHandle
+Event: 0.099 loading class java/lang/invoke/MethodHandle
+Event: 0.100 loading class java/lang/invoke/MethodHandle done
+Event: 0.100 loading class java/lang/invoke/DirectMethodHandle done
+Event: 0.100 loading class java/lang/invoke/MemberName
+Event: 0.101 loading class java/lang/invoke/MemberName done
+Event: 0.101 loading class java/lang/invoke/MethodHandleNatives
+Event: 0.101 loading class java/lang/invoke/MethodHandleNatives done
+Event: 0.102 loading class java/lang/invoke/LambdaForm
+Event: 0.103 loading class java/lang/invoke/LambdaForm done
+Event: 0.103 loading class java/lang/invoke/MethodType
+Event: 0.104 loading class java/lang/invoke/MethodType done
+Event: 0.104 loading class java/lang/BootstrapMethodError
+Event: 0.104 loading class java/lang/BootstrapMethodError done
+Event: 0.104 loading class java/lang/invoke/CallSite
+Event: 0.104 loading class java/lang/invoke/CallSite done
+Event: 0.104 loading class java/lang/invoke/ConstantCallSite
+Event: 0.104 loading class java/lang/invoke/ConstantCallSite done
+Event: 0.104 loading class java/lang/invoke/MutableCallSite
+Event: 0.105 loading class java/lang/invoke/MutableCallSite done
+Event: 0.105 loading class java/lang/invoke/VolatileCallSite
+Event: 0.105 loading class java/lang/invoke/VolatileCallSite done
+Event: 0.105 loading class java/lang/StringBuffer
+Event: 0.106 loading class java/lang/AbstractStringBuilder
+Event: 0.106 loading class java/lang/Appendable
+Event: 0.106 loading class java/lang/Appendable done
+Event: 0.107 loading class java/lang/AbstractStringBuilder done
+Event: 0.107 loading class java/lang/StringBuffer done
+Event: 0.107 loading class java/lang/StringBuilder
+Event: 0.108 loading class java/lang/StringBuilder done
+Event: 0.108 loading class sun/misc/Unsafe
+Event: 0.109 loading class sun/misc/Unsafe done
+Event: 0.109 loading class java/io/ByteArrayInputStream
+Event: 0.109 loading class java/io/InputStream
+Event: 0.109 loading class java/io/Closeable
+Event: 0.110 loading class java/lang/AutoCloseable
+Event: 0.110 loading class java/lang/AutoCloseable done
+Event: 0.110 loading class java/io/Closeable done
+Event: 0.110 loading class java/io/InputStream done
+Event: 0.110 loading class java/io/ByteArrayInputStream done
+Event: 0.110 loading class java/io/File
+Event: 0.111 loading class java/io/File done
+Event: 0.111 loading class java/net/URLClassLoader
+Event: 0.111 loading class java/net/URLClassLoader done
+Event: 0.111 loading class java/net/URL
+Event: 0.112 loading class java/net/URL done
+Event: 0.112 loading class java/util/jar/Manifest
+Event: 0.113 loading class java/util/jar/Manifest done
+Event: 0.113 loading class sun/misc/Launcher
+Event: 0.113 loading class sun/misc/Launcher done
+Event: 0.113 loading class sun/misc/Launcher$AppClassLoader
+Event: 0.113 loading class sun/misc/Launcher$AppClassLoader done
+Event: 0.113 loading class sun/misc/Launcher$ExtClassLoader
+Event: 0.114 loading class sun/misc/Launcher$ExtClassLoader done
+Event: 0.114 loading class java/security/CodeSource
+Event: 0.114 loading class java/security/CodeSource done
+Event: 0.114 loading class java/lang/StackTraceElement
+Event: 0.114 loading class java/lang/StackTraceElement done
+Event: 0.114 loading class java/nio/Buffer
+Event: 0.115 loading class java/nio/Buffer done
+Event: 0.115 loading class java/lang/Boolean
+Event: 0.115 loading class java/lang/Boolean done
+Event: 0.115 loading class java/lang/Character
+Event: 0.116 loading class java/lang/Character done
+Event: 0.116 loading class java/lang/Float
+Event: 0.116 loading class java/lang/Number
+Event: 0.116 loading class java/lang/Number done
+Event: 0.116 loading class java/lang/Float done
+Event: 0.116 loading class java/lang/Double
+Event: 0.117 loading class java/lang/Double done
+Event: 0.117 loading class java/lang/Byte
+Event: 0.117 loading class java/lang/Byte done
+Event: 0.117 loading class java/lang/Short
+Event: 0.118 loading class java/lang/Short done
+Event: 0.118 loading class java/lang/Integer
+Event: 0.118 loading class java/lang/Integer done
+Event: 0.118 loading class java/lang/Long
+Event: 0.119 loading class java/lang/Long done
+Event: 0.121 loading class java/lang/NullPointerException
+Event: 0.121 loading class java/lang/NullPointerException done
+Event: 0.121 loading class java/lang/ArithmeticException
+Event: 0.121 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff60a7b0000 - 0x00007ff60a7f9000 	C:\Program Files\Java\bin\javaw.exe
+0x00007ffc6e240000 - 0x00007ffc6e430000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffc6cb40000 - 0x00007ffc6cbf2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffc6baf0000 - 0x00007ffc6bd95000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffc6dda0000 - 0x00007ffc6de43000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffc6e160000 - 0x00007ffc6e1fe000 	C:\Windows\System32\msvcrt.dll
+0x00007ffc6ce80000 - 0x00007ffc6cf17000 	C:\Windows\System32\sechost.dll
+0x00007ffc6cd60000 - 0x00007ffc6ce80000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffc6cf20000 - 0x00007ffc6d0b4000 	C:\Windows\System32\USER32.dll
+0x00007ffc6b940000 - 0x00007ffc6b961000 	C:\Windows\System32\win32u.dll
+0x00007ffc6d550000 - 0x00007ffc6d576000 	C:\Windows\System32\GDI32.dll
+0x00007ffc6be50000 - 0x00007ffc6bfe6000 	C:\Windows\System32\gdi32full.dll
+0x00007ffc6c100000 - 0x00007ffc6c19e000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffc6c1f0000 - 0x00007ffc6c2ea000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffc51540000 - 0x00007ffc517c4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1256_none_9e7e379be45e40e2\COMCTL32.dll
+0x00007ffc6da60000 - 0x00007ffc6dd96000 	C:\Windows\System32\combase.dll
+0x00007ffc6bdc0000 - 0x00007ffc6be41000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffc6d200000 - 0x00007ffc6d22e000 	C:\Windows\System32\IMM32.DLL
+0x00007ffc20170000 - 0x00007ffc20875000 	C:\Program Files\McAfee\DLP\Agent\fcagpph64.dll
+0x00007ffc6c3b0000 - 0x00007ffc6ca97000 	C:\Windows\System32\SHELL32.dll
+0x00007ffc6c1a0000 - 0x00007ffc6c1ea000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffc6c2f0000 - 0x00007ffc6c399000 	C:\Windows\System32\shcore.dll
+0x00007ffc6b1b0000 - 0x00007ffc6b931000 	C:\Windows\System32\windows.storage.dll
+0x00007ffc6b180000 - 0x00007ffc6b1a3000 	C:\Windows\System32\profapi.dll
+0x00007ffc6b110000 - 0x00007ffc6b15a000 	C:\Windows\System32\powrprof.dll
+0x00007ffc6b0e0000 - 0x00007ffc6b0f0000 	C:\Windows\System32\UMPDC.dll
+0x00007ffc6dfa0000 - 0x00007ffc6dff2000 	C:\Windows\System32\shlwapi.dll
+0x00007ffc6b0f0000 - 0x00007ffc6b101000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffc6bda0000 - 0x00007ffc6bdb7000 	C:\Windows\System32\cryptsp.dll
+0x00007ffc6e000000 - 0x00007ffc6e157000 	C:\Windows\System32\ole32.dll
+0x00007ffc6cc00000 - 0x00007ffc6ccc5000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ffc55db0000 - 0x00007ffc55e39000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x00007ffc6b970000 - 0x00007ffc6b996000 	C:\Windows\System32\bcrypt.dll
+0x00007ffc6a220000 - 0x00007ffc6a22a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffc670e0000 - 0x00007ffc671d0000 	C:\Windows\SYSTEM32\PROPSYS.dll
+0x00007ffc6a5e0000 - 0x00007ffc6a61a000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ffc6afc0000 - 0x00007ffc6aff7000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ffc69ef0000 - 0x00007ffc69f21000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x00007ffc3b060000 - 0x00007ffc3b104000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPApi.dll
+0x00007ffc6c0a0000 - 0x00007ffc6c0fc000 	C:\Windows\System32\WINTRUST.dll
+0x00007ffc6b160000 - 0x00007ffc6b172000 	C:\Windows\System32\MSASN1.dll
+0x00007ffc6b9a0000 - 0x00007ffc6bae9000 	C:\Windows\System32\CRYPT32.dll
+0x000000005ca10000 - 0x000000005ca1c000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPThe.dll
+0x000000005cb20000 - 0x000000005cbf2000 	C:\Program Files\Java\jre\bin\msvcr100.dll
+0x000000005dfa0000 - 0x000000005e863000 	C:\Program Files\Java\jre\bin\server\jvm.dll
+0x00007ffc6c3a0000 - 0x00007ffc6c3a8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffc4f480000 - 0x00007ffc4f489000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffc6df20000 - 0x00007ffc6df8f000 	C:\Windows\System32\WS2_32.dll
+0x00007ffc68b40000 - 0x00007ffc68b64000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffc68b10000 - 0x00007ffc68b3d000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffc4a8e0000 - 0x00007ffc4a8ef000 	C:\Program Files\Java\jre\bin\verify.dll
+0x00007ffc4a8b0000 - 0x00007ffc4a8d9000 	C:\Program Files\Java\jre\bin\java.dll
+0x00007ffc4a050000 - 0x00007ffc4a066000 	C:\Program Files\Java\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51996 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=exam-server -Dfile.encoding=UTF-8 
+java_command: com.exam.examserver.ExamServerApplication
+java_class_path (initial): D:\Users\stapade\Desktop\Spring-boot projects\exam-server\target\classes;D:\Users\stapade\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.4.5\spring-boot-starter-data-jpa-2.4.5.jar;D:\Users\stapade\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.4.5\spring-boot-starter-aop-2.4.5.jar;D:\Users\stapade\.m2\repository\org\springframework\spring-aop\5.3.6\spring-aop-5.3.6.jar;D:\Users\stapade\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;D:\Users\stapade\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.4.5\spring-boot-starter-jdbc-2.4.5.jar;D:\Users\stapade\.m2\repository\com\zaxxer\HikariCP\3.4.5\HikariCP-3.4.5.jar;D:\Users\stapade\.m2\repository\org\springframework\spring-jdbc\5.3.6\spring-jdbc-5.3.6.jar;D:\Users\stapade\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;D:\Users\stapade\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;D:\Users\stapade\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;D:\Users\stapade\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;D:\Users\stapade\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;D:\Users\stapade\.m2\repository\net\bytebuddy\byte-buddy\1.10.22\byte-buddy-1.10.22.jar;D:\Users\stapade\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;D:\Users\stapade\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;D:\Users\stapade\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;D:\Users\stapade\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;D:\Users\stapade\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;D:\Users\stapade\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.4\jaxb-runtime-2.3.4.jar;D:\Users\stapade\.
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java
+PATH=D:/Users/stapade/Desktop/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507/jre/bin/server;D:/Users/stapade/Desktop/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507/jre/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\PuTTY\;C:\Program Files\Java\bin;C:\Program Files\nodejs\;D:\Users\stapade\AppData\Local\Microsoft\WindowsApps;D:\Users\stapade\AppData\Roaming\npm;D:\Users\stapade\AppData\Local\Programs\Git\cmd;D:\Users\stapade\Desktop\eclipse;
+USERNAME=stapade
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.1110)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 11, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16551892k(2139000k free), swap 16551892k(12312k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.242-b08) for windows-amd64 JRE (1.8.0_242-b08), built on Jan 18 2020 10:32:32 by "VssAdministrator" with MS VC++ 10.0 (VS2010)
+
+time: Fri May 14 15:40:24 2021
+timezone: India Standard Time
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
