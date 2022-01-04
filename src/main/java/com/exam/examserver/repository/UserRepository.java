@@ -6,10 +6,13 @@ import org.springframework.stereotype.Repository;
 import com.exam.examserver.entity.User;
 
 
-//@Repository
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
     public User findByUsername(String username);
+   
+    
+    
     
    
     

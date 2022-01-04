@@ -54,7 +54,7 @@ public class QuestionController {
 	
 	//get all quetions of any quiz
 	@GetMapping("/quiz/{qid}")
-	public ResponseEntity<?> getQAllQuestionsOfQuiz(@PathVariable("qid") Long qid){
+	public ResponseEntity<?> getQAllQuestionsOfQuizToUser(@PathVariable("qid") Long qid){
 		
 //		 Quiz quiz=new Quiz();
 //		 quiz.setId(qid);
@@ -64,9 +64,23 @@ public class QuestionController {
 		Set<Question>questions=quiz.getQuestions();
 		List<Question> list=new ArrayList<>(questions);
 		if(list.size()>Integer.parseInt(quiz.getNumberOfQuetions())) {
-			list=list.subList(0,Integer.parseInt(quiz.getNumberOfQuetions()+1));
+			list=list.subList(0,Integer.parseInt(quiz.getNumberOfQuetions()));
 			
 		}
+		Collections.shuffle(list);
+		return ResponseEntity.ok(list);	
+	}
+	
+	@GetMapping("/admin/quiz/{qid}")
+	public ResponseEntity<?> getQAllQuestionsOfQuizToAdmin(@PathVariable("qid") Long qid){
+		
+//		 Quiz quiz=new Quiz();
+//		 quiz.setId(qid);
+//		 Set<Question>questions=this.questionService.getAllQuestionsOfQuiz(quiz);
+//		 return ResponseEntity.ok(questions);
+		Quiz quiz=this.quizService.getQuiz(qid);
+		Set<Question>questions=quiz.getQuestions();
+		List<Question> list=new ArrayList<>(questions);
 		Collections.shuffle(list);
 		return ResponseEntity.ok(list);	
 	}

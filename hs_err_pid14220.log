@@ -1,0 +1,1269 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 36480 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:389), pid=14220, tid=0x00000000000005b8
+#
+# JRE version: OpenJDK Runtime Environment (8.0_242-b08) (build 1.8.0_242-b08)
+# Java VM: OpenJDK 64-Bit Server VM (25.242-b08 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000020329800):  JavaThread "restartedMain" [_thread_in_native, id=1464, stack(0x0000000021370000,0x0000000021470000)]
+
+Stack: [0x0000000021370000,0x0000000021470000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.util.concurrent.ConcurrentSkipListSet.<init>(Ljava/util/Comparator;)V+5
+j  org.apache.tomcat.websocket.server.WsWriteTimeout.<init>()V+17
+j  org.apache.tomcat.websocket.server.WsServerContainer.<init>(Ljavax/servlet/ServletContext;)V+9
+j  org.apache.tomcat.websocket.server.WsSci.init(Ljavax/servlet/ServletContext;Z)Lorg/apache/tomcat/websocket/server/WsServerContainer;+5
+j  org.apache.tomcat.websocket.server.WsSci.onStartup(Ljava/util/Set;Ljavax/servlet/ServletContext;)V+2
+j  org.apache.catalina.core.StandardContext.startInternal()V+1067
+j  org.apache.catalina.util.LifecycleBase.start()V+210
+j  org.apache.catalina.core.ContainerBase$StartChild.call()Ljava/lang/Void;+4
+j  org.apache.catalina.core.ContainerBase$StartChild.call()Ljava/lang/Object;+1
+j  java.util.concurrent.FutureTask.run()V+42
+j  org.apache.tomcat.util.threads.InlineExecutorService.execute(Ljava/lang/Runnable;)V+38
+j  java.util.concurrent.AbstractExecutorService.submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;+20
+j  org.apache.catalina.core.ContainerBase.startInternal()V+106
+j  org.apache.catalina.core.StandardHost.startInternal()V+175
+j  org.apache.catalina.util.LifecycleBase.start()V+210
+j  org.apache.catalina.core.ContainerBase$StartChild.call()Ljava/lang/Void;+4
+j  org.apache.catalina.core.ContainerBase$StartChild.call()Ljava/lang/Object;+1
+j  java.util.concurrent.FutureTask.run()V+42
+j  org.apache.tomcat.util.threads.InlineExecutorService.execute(Ljava/lang/Runnable;)V+38
+j  java.util.concurrent.AbstractExecutorService.submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;+20
+j  org.apache.catalina.core.ContainerBase.startInternal()V+106
+j  org.apache.catalina.core.StandardEngine.startInternal()V+38
+j  org.apache.catalina.util.LifecycleBase.start()V+210
+j  org.apache.catalina.core.StandardService.startInternal()V+63
+j  org.apache.catalina.util.LifecycleBase.start()V+210
+j  org.apache.catalina.core.StandardServer.startInternal()V+53
+j  org.apache.catalina.util.LifecycleBase.start()V+210
+j  org.apache.catalina.startup.Tomcat.start()V+9
+j  org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize()V+64
+j  org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(Lorg/apache/catalina/startup/Tomcat;ZLorg/springframework/boot/web/server/Shutdown;)V+66
+j  org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(Lorg/apache/catalina/startup/Tomcat;)Lorg/springframework/boot/web/embedded/tomcat/TomcatWebServer;+21
+j  org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer([Lorg/springframework/boot/web/servlet/ServletContextInitializer;)Lorg/springframework/boot/web/server/WebServer;+165
+j  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer()V+67
+j  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh()V+5
+j  org.springframework.context.support.AbstractApplicationContext.refresh()V+77
+j  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh()V+1
+j  org.springframework.boot.SpringApplication.refresh(Lorg/springframework/context/ConfigurableApplicationContext;)V+1
+j  org.springframework.boot.SpringApplication.refresh(Lorg/springframework/context/ApplicationContext;)V+12
+j  org.springframework.boot.SpringApplication.refreshContext(Lorg/springframework/context/ConfigurableApplicationContext;)V+19
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+111
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  org.springframework.boot.SpringApplication.run(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  com.exam.examserver.ExamServerApplication.main([Ljava/lang/String;)V+3
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.springframework.boot.devtools.restart.RestartLauncher.run()V+42
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000021c3e000 JavaThread "mysql-cj-abandoned-connection-cleanup" daemon [_thread_blocked, id=19716, stack(0x0000000022640000,0x0000000022740000)]
+=>0x0000000020329800 JavaThread "restartedMain" [_thread_in_native, id=1464, stack(0x0000000021370000,0x0000000021470000)]
+  0x0000000020326800 JavaThread "Thread-2" [_thread_blocked, id=24276, stack(0x0000000021270000,0x0000000021370000)]
+  0x00000000200c5800 JavaThread "JMX server connection timeout 18" daemon [_thread_blocked, id=10148, stack(0x0000000020f70000,0x0000000021070000)]
+  0x00000000200ad000 JavaThread "RMI TCP Connection(2)-127.0.0.1" daemon [_thread_in_native, id=2692, stack(0x0000000020c30000,0x0000000020d30000)]
+  0x00000000200ac800 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=24960, stack(0x0000000020930000,0x0000000020a30000)]
+  0x0000000020057800 JavaThread "RMI TCP Connection(1)-127.0.0.1" daemon [_thread_in_native, id=14680, stack(0x0000000020830000,0x0000000020930000)]
+  0x000000001ffc0000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=11860, stack(0x0000000020630000,0x0000000020730000)]
+  0x000000001ffcc800 JavaThread "RMI TCP Accept-49636" daemon [_thread_in_native, id=20836, stack(0x0000000020530000,0x0000000020630000)]
+  0x000000001ffb3800 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=1084, stack(0x0000000020430000,0x0000000020530000)]
+  0x000000001dd7c000 JavaThread "Service Thread" daemon [_thread_blocked, id=12204, stack(0x000000001f7f0000,0x000000001f8f0000)]
+  0x000000001dd48800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=21200, stack(0x000000001f6f0000,0x000000001f7f0000)]
+  0x000000001dd39000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=13840, stack(0x000000001f5f0000,0x000000001f6f0000)]
+  0x000000001dce8000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=8648, stack(0x000000001f4f0000,0x000000001f5f0000)]
+  0x000000001dce5000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=9304, stack(0x000000001f3f0000,0x000000001f4f0000)]
+  0x000000001dce4000 JavaThread "Attach Listener" daemon [_thread_blocked, id=21676, stack(0x000000001f2f0000,0x000000001f3f0000)]
+  0x000000001dce3000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=25644, stack(0x000000001f1f0000,0x000000001f2f0000)]
+  0x000000001cd3d800 JavaThread "Finalizer" daemon [_thread_blocked, id=16044, stack(0x000000001eff0000,0x000000001f0f0000)]
+  0x000000001dcc8000 JavaThread "Reference Handler" daemon [_thread_blocked, id=13412, stack(0x000000001eef0000,0x000000001eff0000)]
+  0x0000000003347800 JavaThread "main" [_thread_blocked, id=16196, stack(0x0000000003200000,0x0000000003300000)]
+
+Other Threads:
+  0x000000001dcc4800 VMThread [stack: 0x000000001edf0000,0x000000001eef0000] [id=14432]
+  0x000000002001a800 WatcherThread [stack: 0x0000000020730000,0x0000000020830000] [id=25288]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+OutOfMemory and StackOverflow Exception counts:
+OutOfMemoryError java_heap_errors=2
+
+heap address: 0x00000006c3600000, size: 4042 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 153088K, used 5382K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 3% used [0x000000076bd00000,0x000000076c2418b8,0x0000000774600000)
+  from space 12800K, 0% used [0x0000000774600000,0x0000000774600000,0x0000000775280000)
+  to   space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+ ParOldGen       total 100864K, used 16093K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 15% used [0x00000006c3600000,0x00000006c45b7690,0x00000006c9880000)
+ Metaspace       used 37527K, capacity 39728K, committed 39808K, reserved 1091584K
+  class space    used 5090K, capacity 5502K, committed 5504K, reserved 1048576K
+
+Card table byte_map: [0x00000000127c0000,0x0000000012fb0000] byte_map_base: 0x000000000f1a5000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005b5eff30
+ Begin Bits: [0x0000000013d00000, 0x0000000017c28000)
+ End Bits:   [0x0000000017c28000, 0x000000001bb50000)
+
+Polling page: 0x0000000002f10000
+
+CodeCache: size=245760Kb used=6473Kb max_used=6473Kb free=239286Kb
+ bounds [0x0000000003400000, 0x0000000003a60000, 0x0000000012400000]
+ total_blobs=3533 nmethods=3087 adapters=359
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 5.444 Thread 0x000000001dd48800 2963       1       java.lang.invoke.BoundMethodHandle::editor (8 bytes)
+Event: 5.444 Thread 0x000000001dd48800 nmethod 2963 0x0000000003a0c010 code [0x0000000003a0c180, 0x0000000003a0c328]
+Event: 5.444 Thread 0x000000001dd48800 2964       1       java.lang.invoke.LambdaForm::editor (5 bytes)
+Event: 5.445 Thread 0x000000001dd48800 nmethod 2964 0x0000000003a0c410 code [0x0000000003a0c580, 0x0000000003a0c728]
+Event: 5.451 Thread 0x000000001dd48800 2965       1       org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$$Lambda$403/1665651907::doWith (13 bytes)
+Event: 5.451 Thread 0x000000001dd48800 nmethod 2965 0x0000000003a0c7d0 code [0x0000000003a0c920, 0x0000000003a0ca68]
+Event: 5.451 Thread 0x000000001dd48800 2966       1       org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor::lambda$buildAutowiringMetadata$1 (87 bytes)
+Event: 5.452 Thread 0x000000001dd48800 nmethod 2966 0x0000000003a0cb10 code [0x0000000003a0cd00, 0x0000000003a0d398]
+Event: 5.452 Thread 0x000000001dd48800 2967   !   1       org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory::getSingletonFactoryBeanForTypeCheck (267 bytes)
+Event: 5.454 Thread 0x000000001dd48800 nmethod 2967 0x0000000003a0d7d0 code [0x0000000003a0daa0, 0x0000000003a0e7d8]
+Event: 5.454 Thread 0x000000001dd48800 2968       1       org.springframework.boot.context.properties.bind.JavaBeanBinder$Bean::addMethodIfPossible (79 bytes)
+Event: 5.455 Thread 0x000000001dd48800 nmethod 2968 0x0000000003a0f510 code [0x0000000003a0f6c0, 0x0000000003a0f9c8]
+Event: 5.455 Thread 0x000000001dd48800 2969       1       org.springframework.boot.context.properties.source.SystemEnvironmentPropertyMapper::map (41 bytes)
+Event: 5.455 Thread 0x000000001dd48800 nmethod 2969 0x0000000003a0fd10 code [0x0000000003a0fea0, 0x0000000003a102e8]
+Event: 5.455 Thread 0x000000001dd48800 2970       1       org.springframework.boot.context.properties.source.SpringIterableConfigurationPropertySource$Mappings::containsDescendantOf (93 bytes)
+Event: 5.456 Thread 0x000000001dd48800 nmethod 2970 0x0000000003a10590 code [0x0000000003a10760, 0x0000000003a10ab8]
+Event: 5.456 Thread 0x000000001dd48800 2971       1       org.springframework.boot.context.properties.source.ConfigurationPropertyName::dashIgnoringElementEquals (148 bytes)
+Event: 5.457 Thread 0x000000001dd48800 nmethod 2971 0x0000000003a10cd0 code [0x0000000003a10e80, 0x0000000003a111e8]
+Event: 5.457 Thread 0x000000001dd48800 2972       1       java.lang.RuntimeException::<init> (6 bytes)
+Event: 5.457 Thread 0x000000001dd48800 nmethod 2972 0x0000000003a11510 code [0x0000000003a11660, 0x0000000003a11788]
+Event: 5.505 Thread 0x000000001dd48800 2973       1       java.util.TimSort::countRunAndMakeAscending (128 bytes)
+Event: 5.509 Thread 0x000000001dd48800 nmethod 2973 0x0000000003a11810 code [0x0000000003a119c0, 0x0000000003a11e48]
+Event: 5.513 Thread 0x000000001dd48800 2974       1       org.springframework.boot.context.properties.bind.JavaBeanBinder$Bean::isCandidate (76 bytes)
+Event: 5.518 Thread 0x000000001dd48800 nmethod 2974 0x0000000003a12210 code [0x0000000003a12380, 0x0000000003a125e8]
+Event: 5.519 Thread 0x000000001dd48800 2975   !   1       java.io.FileInputStream::close (62 bytes)
+Event: 5.519 Thread 0x000000001dd48800 nmethod 2975 0x0000000003a126d0 code [0x0000000003a12840, 0x0000000003a12c38]
+Event: 5.525 Thread 0x000000001dd48800 2976       1       java.lang.invoke.BoundMethodHandle$Species_L::make (11 bytes)
+Event: 5.526 Thread 0x000000001dd48800 nmethod 2976 0x0000000003a12d90 code [0x0000000003a12ee0, 0x0000000003a13088]
+Event: 5.528 Thread 0x000000001dd48800 2977       1       sun.misc.CompoundEnumeration::next (58 bytes)
+Event: 5.528 Thread 0x000000001dd48800 nmethod 2977 0x0000000003a13150 code [0x0000000003a132c0, 0x0000000003a13488]
+Event: 5.529 Thread 0x000000001dd48800 2979       1       org.springframework.core.convert.TypeDescriptor::equals (113 bytes)
+Event: 5.532 Thread 0x000000001dd48800 nmethod 2979 0x0000000003a13550 code [0x0000000003a13900, 0x0000000003a14a48]
+Event: 5.532 Thread 0x000000001dd48800 2978       1       org.springframework.boot.context.properties.source.SpringIterableConfigurationPropertySource$ConfigurationPropertyNamesIterator::skipNulls (39 bytes)
+Event: 5.532 Thread 0x000000001dd48800 nmethod 2978 0x0000000003a15c10 code [0x0000000003a15d60, 0x0000000003a15ed0]
+Event: 5.532 Thread 0x000000001dd48800 2980       1       org.springframework.boot.context.properties.source.AliasedConfigurationPropertySource::getAliases (5 bytes)
+Event: 5.532 Thread 0x000000001dd48800 nmethod 2980 0x0000000003a15f90 code [0x0000000003a160e0, 0x0000000003a161f0]
+Event: 5.533 Thread 0x000000001dd48800 2982       1       java.util.Spliterators$IteratorSpliterator::characteristics (5 bytes)
+Event: 5.533 Thread 0x000000001dd48800 nmethod 2982 0x0000000003a16250 code [0x0000000003a163a0, 0x0000000003a164b0]
+Event: 5.533 Thread 0x000000001dd48800 2981       1       org.springframework.boot.context.properties.bind.JavaBeanBinder$BeanProperty::getName (5 bytes)
+Event: 5.533 Thread 0x000000001dd48800 nmethod 2981 0x0000000003a16510 code [0x0000000003a16660, 0x0000000003a16770]
+Event: 5.533 Thread 0x000000001dd48800 2983       1       org.springframework.beans.factory.support.AbstractBeanFactory::getBeanPostProcessors (5 bytes)
+Event: 5.533 Thread 0x000000001dd48800 nmethod 2983 0x0000000003a167d0 code [0x0000000003a16920, 0x0000000003a16a30]
+Event: 5.534 Thread 0x000000001dd48800 2984       1       org.springframework.boot.context.properties.bind.BindConverter::convert (30 bytes)
+Event: 5.534 Thread 0x000000001dd48800 nmethod 2984 0x0000000003a16a90 code [0x0000000003a16c20, 0x0000000003a16e88]
+Event: 5.534 Thread 0x000000001dd48800 2985       1       org.springframework.boot.context.properties.bind.BindConverter::convert (14 bytes)
+Event: 5.535 Thread 0x000000001dd48800 nmethod 2985 0x0000000003a17010 code [0x0000000003a171a0, 0x0000000003a17428]
+Event: 5.535 Thread 0x000000001dd48800 2986       1       org.springframework.boot.context.properties.source.SpringIterableConfigurationPropertySource::isImmutablePropertySource (52 bytes)
+Event: 5.536 Thread 0x000000001dd48800 nmethod 2986 0x0000000003a17610 code [0x0000000003a177c0, 0x0000000003a17b98]
+Event: 5.536 Thread 0x000000001dd48800 2987       1       org.springframework.core.MethodParameter::<init> (8 bytes)
+Event: 5.537 Thread 0x000000001dd48800 nmethod 2987 0x0000000003a17d90 code [0x0000000003a17f20, 0x0000000003a182a8]
+Event: 5.541 Thread 0x000000001dd48800 2988       1       org.springframework.boot.context.properties.bind.AbstractBindHandler::onStart (13 bytes)
+Event: 5.541 Thread 0x000000001dd48800 nmethod 2988 0x0000000003a186d0 code [0x0000000003a18820, 0x0000000003a18968]
+Event: 5.542 Thread 0x000000001dd48800 2989       1       org.springframework.boot.context.properties.source.SystemEnvironmentPropertyMapper::convertName (62 bytes)
+Event: 5.543 Thread 0x000000001dd48800 nmethod 2989 0x0000000003a189d0 code [0x0000000003a18ba0, 0x0000000003a19138]
+Event: 5.543 Thread 0x000000001dd48800 2990       1       org.springframework.boot.context.properties.source.SystemEnvironmentPropertyMapper::convertLegacyName (60 bytes)
+Event: 5.544 Thread 0x000000001dd48800 nmethod 2990 0x0000000003a195d0 code [0x0000000003a197a0, 0x0000000003a19d88]
+Event: 5.544 Thread 0x000000001dd48800 2991       1       org.springframework.boot.context.properties.bind.AbstractBindHandler::onFinish (15 bytes)
+Event: 5.545 Thread 0x000000001dd48800 nmethod 2991 0x0000000003a1a350 code [0x0000000003a1a4a0, 0x0000000003a1a5e8]
+Event: 5.552 Thread 0x000000001dd48800 2992       1       org.springframework.context.support.GenericApplicationContext::getClassLoader (29 bytes)
+Event: 5.552 Thread 0x000000001dd48800 nmethod 2992 0x0000000003a1a690 code [0x0000000003a1a800, 0x0000000003a1a998]
+Event: 5.556 Thread 0x000000001dd48800 2993       1       java.net.URLClassLoader$3::hasMoreElements (5 bytes)
+Event: 5.556 Thread 0x000000001dd48800 nmethod 2993 0x0000000003a1aa50 code [0x0000000003a1aba0, 0x0000000003a1acc8]
+Event: 5.557 Thread 0x000000001dd48800 2994       1       java.lang.invoke.DelegatingMethodHandle::<init> (10 bytes)
+Event: 5.557 Thread 0x000000001dd48800 nmethod 2994 0x0000000003a1ad50 code [0x0000000003a1aee0, 0x0000000003a1b148]
+Event: 5.557 Thread 0x000000001dd48800 2996       1       org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator$BeanFactoryAdvisorRetrievalHelperAdapter::isEligibleBean (9 bytes)
+Event: 5.558 Thread 0x000000001dd48800 nmethod 2996 0x0000000003a1b350 code [0x0000000003a1b4a0, 0x0000000003a1b5e8]
+Event: 5.558 Thread 0x000000001dd48800 2995       1       java.lang.invoke.DelegatingMethodHandle::chooseDelegatingForm (24 bytes)
+Event: 5.558 Thread 0x000000001dd48800 nmethod 2995 0x0000000003a1b650 code [0x0000000003a1b7c0, 0x0000000003a1b948]
+Event: 5.561 Thread 0x000000001dd48800 2997       1       org.springframework.boot.devtools.restart.ClassLoaderFilesResourcePatternResolver::getClassLoader (10 bytes)
+Event: 5.562 Thread 0x000000001dd48800 nmethod 2997 0x0000000003a1ba10 code [0x0000000003a1bb60, 0x0000000003a1bca8]
+Event: 5.562 Thread 0x000000001dd48800 2998       1       java.lang.invoke.LambdaForm$MH/150316297::linkToTargetMethod (13 bytes)
+Event: 5.562 Thread 0x000000001dd48800 nmethod 2998 0x0000000003a1bd10 code [0x0000000003a1be80, 0x0000000003a1bff8]
+Event: 5.564 Thread 0x000000001dd48800 3000       1       java.beans.Introspector::decapitalize (68 bytes)
+Event: 5.566 Thread 0x000000001dd48800 nmethod 3000 0x0000000003a1c0d0 code [0x0000000003a1c300, 0x0000000003a1cab8]
+Event: 5.566 Thread 0x000000001dd48800 3001       1       org.springframework.boot.context.properties.source.SpringIterableConfigurationPropertySource::getConfigurationPropertyNames (53 bytes)
+Event: 5.567 Thread 0x000000001dd48800 nmethod 3001 0x0000000003a1d0d0 code [0x0000000003a1d2a0, 0x0000000003a1d7e8]
+Event: 5.567 Thread 0x000000001dd48800 3002       1       org.springframework.boot.context.properties.bind.Binder::handleBindResult (121 bytes)
+Event: 5.569 Thread 0x000000001dd48800 nmethod 3002 0x0000000003a1dc50 code [0x0000000003a1dec0, 0x0000000003a1e7d8]
+Event: 5.569 Thread 0x000000001dd48800 2999       1       org.springframework.core.annotation.TypeMappedAnnotations::isPresent (39 bytes)
+Event: 5.569 Thread 0x000000001dd48800 nmethod 2999 0x0000000003a1f210 code [0x0000000003a1f3a0, 0x0000000003a1f628]
+Event: 5.569 Thread 0x000000001dd48800 3004       1       org.springframework.aop.support.AopUtils::canApply (206 bytes)
+Event: 5.571 Thread 0x000000001dd48800 nmethod 3004 0x0000000003a1f790 code [0x0000000003a1fa80, 0x0000000003a204b8]
+Event: 5.571 Thread 0x000000001dd48800 3005       1       org.springframework.core.ResolvableType::forMethodParameter (40 bytes)
+Event: 5.572 Thread 0x000000001dd48800 nmethod 3005 0x0000000003a20f90 code [0x0000000003a21140, 0x0000000003a214a8]
+Event: 5.572 Thread 0x000000001dd48800 3003       1       java.lang.invoke.BoundMethodHandle::rebind (14 bytes)
+Event: 5.572 Thread 0x000000001dd48800 nmethod 3003 0x0000000003a21750 code [0x0000000003a218e0, 0x0000000003a21bb8]
+Event: 5.573 Thread 0x000000001dd48800 3006       1       org.springframework.boot.context.properties.source.ConfigurationPropertyName::buildToString (138 bytes)
+Event: 5.574 Thread 0x000000001dd48800 nmethod 3006 0x0000000003a21d90 code [0x0000000003a21fe0, 0x0000000003a22ac8]
+Event: 5.574 Thread 0x000000001dd48800 3008       1       org.springframework.boot.context.properties.bind.BindHandler::onFinish (1 bytes)
+Event: 5.574 Thread 0x000000001dd48800 nmethod 3008 0x0000000003a23610 code [0x0000000003a23760, 0x0000000003a23870]
+Event: 5.574 Thread 0x000000001dd48800 3007       1       org.springframework.boot.context.properties.bind.Bindable::of (25 bytes)
+Event: 5.575 Thread 0x000000001dd48800 nmethod 3007 0x0000000003a238d0 code [0x0000000003a23a40, 0x0000000003a23cb8]
+Event: 5.575 Thread 0x000000001dd48800 3010       1       org.springframework.core.MethodParameter::getNestedParameterType (122 bytes)
+Event: 5.576 Thread 0x000000001dd48800 nmethod 3010 0x0000000003a23dd0 code [0x0000000003a23fe0, 0x0000000003a24608]
+Event: 5.576 Thread 0x000000001dd48800 3009       1       org.springframework.beans.factory.config.DependencyDescriptor::getDependencyType (123 bytes)
+Event: 5.577 Thread 0x000000001dd48800 nmethod 3009 0x0000000003a249d0 code [0x0000000003a24bc0, 0x0000000003a252f8]
+Event: 5.578 Thread 0x000000001dd48800 3013       1       org.springframework.core.SerializableTypeWrapper::unwrap (34 bytes)
+Event: 5.579 Thread 0x000000001dd48800 nmethod 3013 0x0000000003a257d0 code [0x0000000003a25940, 0x0000000003a25b58]
+Event: 5.579 Thread 0x000000001dd48800 3011       1       java.lang.Integer::hashCode (8 bytes)
+Event: 5.579 Thread 0x000000001dd48800 nmethod 3011 0x0000000003a25c10 code [0x0000000003a25d60, 0x0000000003a25e70]
+Event: 5.579 Thread 0x000000001dd48800 3012       1       java.lang.Integer::hashCode (2 bytes)
+Event: 5.579 Thread 0x000000001dd48800 nmethod 3012 0x0000000003a25ed0 code [0x0000000003a26020, 0x0000000003a26110]
+Event: 5.586 Thread 0x000000001dd48800 3014   !   1       com.sun.proxy.$Proxy30::annotationType (29 bytes)
+Event: 5.586 Thread 0x000000001dd48800 nmethod 3014 0x0000000003a26150 code [0x0000000003a262c0, 0x0000000003a26538]
+Event: 5.590 Thread 0x000000001dd48800 3015       1       org.springframework.beans.factory.InjectionPoint::obtainMethodParameter (22 bytes)
+Event: 5.590 Thread 0x000000001dd48800 nmethod 3015 0x0000000003a26690 code [0x0000000003a26800, 0x0000000003a269e8]
+Event: 5.598 Thread 0x000000001dd48800 3016       1       java.net.URLStreamHandler::setURL (159 bytes)
+Event: 5.599 Thread 0x000000001dd48800 nmethod 3016 0x0000000003a26ad0 code [0x0000000003a26cc0, 0x0000000003a27368]
+Event: 5.632 Thread 0x000000001dd48800 3017       1       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)
+Event: 5.632 Thread 0x000000001dd48800 nmethod 3017 0x0000000003a28050 code [0x0000000003a281c0, 0x0000000003a28418]
+Event: 5.633 Thread 0x000000001dd48800 3018       1       java.io.ObjectOutputStream::writeByte (9 bytes)
+Event: 5.633 Thread 0x000000001dd48800 nmethod 3018 0x0000000003a28550 code [0x0000000003a286c0, 0x0000000003a28848]
+Event: 5.633 Thread 0x000000001dd48800 3019       1       java.io.ObjectOutputStream$BlockDataOutputStream::writeUTF (11 bytes)
+Event: 5.633 Thread 0x000000001dd48800 nmethod 3019 0x0000000003a28990 code [0x0000000003a28b00, 0x0000000003a28c78]
+Event: 5.648 Thread 0x000000001dd48800 3021   !   1       java.io.BufferedReader::readLine (304 bytes)
+Event: 5.649 Thread 0x000000001dd48800 nmethod 3021 0x0000000003a28d10 code [0x0000000003a28f20, 0x0000000003a29d08]
+Event: 5.650 Thread 0x000000001dd48800 3020       1       sun.nio.cs.UTF_8$Decoder::decodeArrayLoop (691 bytes)
+Event: 5.655 Thread 0x000000001dd48800 nmethod 3020 0x0000000003a2a810 code [0x0000000003a2ae20, 0x0000000003a2cac8]
+Event: 5.655 Thread 0x000000001dd48800 3024       1       java.util.regex.Pattern$1::isSatisfiedBy (13 bytes)
+Event: 5.656 Thread 0x000000001dd48800 nmethod 3024 0x0000000003a2ff90 code [0x0000000003a300e0, 0x0000000003a30230]
+Event: 5.656 Thread 0x000000001dd48800 3025       1       java.util.regex.Pattern::access$200 (7 bytes)
+Event: 5.656 Thread 0x000000001dd48800 nmethod 3025 0x0000000003a30290 code [0x0000000003a303e0, 0x0000000003a304f0]
+Event: 5.656 Thread 0x000000001dd48800 3026       1       java.util.regex.Pattern::inRange (16 bytes)
+Event: 5.656 Thread 0x000000001dd48800 nmethod 3026 0x0000000003a30550 code [0x0000000003a306a0, 0x0000000003a307b0]
+Event: 5.656 Thread 0x000000001dd48800 3022       1       java.lang.CharacterDataLatin1::isJavaIdentifierPart (20 bytes)
+Event: 5.656 Thread 0x000000001dd48800 nmethod 3022 0x0000000003a30810 code [0x0000000003a30960, 0x0000000003a30ab0]
+Event: 5.656 Thread 0x000000001dd48800 3023       1       java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1::hasNext (10 bytes)
+Event: 5.657 Thread 0x000000001dd48800 nmethod 3023 0x0000000003a30bd0 code [0x0000000003a30d20, 0x0000000003a30e68]
+Event: 5.658 Thread 0x000000001dd48800 3027       1       java.io.BufferedReader::readLine (6 bytes)
+Event: 5.658 Thread 0x000000001dd48800 nmethod 3027 0x0000000003a30ed0 code [0x0000000003a31020, 0x0000000003a31148]
+Event: 5.659 Thread 0x000000001dd48800 3028       1       java.lang.AbstractStringBuilder::append (54 bytes)
+Event: 5.659 Thread 0x000000001dd48800 nmethod 3028 0x0000000003a311d0 code [0x0000000003a31380, 0x0000000003a31688]
+Event: 5.659 Thread 0x000000001dd48800 3029       1       java.lang.StringBuilder::append (8 bytes)
+Event: 5.659 Thread 0x000000001dd48800 nmethod 3029 0x0000000003a31790 code [0x0000000003a318e0, 0x0000000003a31a28]
+Event: 5.659 Thread 0x000000001dd48800 3030       1       java.lang.StringBuilder::append (6 bytes)
+Event: 5.660 Thread 0x000000001dd48800 nmethod 3030 0x0000000003a31a90 code [0x0000000003a31be0, 0x0000000003a31d28]
+Event: 5.660 Thread 0x000000001dd48800 3031       1       org.apache.logging.log4j.util.PropertiesUtil$Environment::access$400 (5 bytes)
+Event: 5.660 Thread 0x000000001dd48800 nmethod 3031 0x0000000003a31dd0 code [0x0000000003a31f20, 0x0000000003a32010]
+Event: 5.660 Thread 0x000000001dd48800 3032       1       org.apache.logging.log4j.util.PropertiesUtil$Environment::access$500 (5 bytes)
+Event: 5.660 Thread 0x000000001dd48800 nmethod 3032 0x0000000003a32090 code [0x0000000003a321e0, 0x0000000003a322d0]
+Event: 5.660 Thread 0x000000001dd48800 3033       1       org.apache.logging.log4j.util.PropertiesUtil$Environment::access$600 (5 bytes)
+Event: 5.660 Thread 0x000000001dd48800 nmethod 3033 0x0000000003a32350 code [0x0000000003a324a0, 0x0000000003a32590]
+Event: 5.667 Thread 0x000000001dd48800 3034       1       java.util.regex.Pattern$Ques::match (192 bytes)
+Event: 5.668 Thread 0x000000001dd48800 nmethod 3034 0x0000000003a32890 code [0x0000000003a32a80, 0x0000000003a32f38]
+Event: 5.669 Thread 0x000000001dd48800 3035   !   1       java.nio.charset.CharsetDecoder::decode (287 bytes)
+Event: 5.670 Thread 0x000000001dd48800 nmethod 3035 0x0000000003a33190 code [0x0000000003a33380, 0x0000000003a339f8]
+Event: 5.672 Thread 0x000000001dd48800 3036       1       sun.nio.cs.UTF_8$Decoder::decodeLoop (28 bytes)
+Event: 5.673 Thread 0x000000001dd48800 nmethod 3036 0x0000000003a33fd0 code [0x0000000003a34140, 0x0000000003a34318]
+Event: 5.673 Thread 0x000000001dd48800 3037       1       java.lang.ClassLoader::getBootstrapClassPath (4 bytes)
+Event: 5.673 Thread 0x000000001dd48800 nmethod 3037 0x0000000003a34410 code [0x0000000003a34560, 0x0000000003a34650]
+Event: 5.673 Thread 0x000000001dd48800 3038       1       sun.misc.Launcher::getBootstrapClassPath (4 bytes)
+Event: 5.673 Thread 0x000000001dd48800 nmethod 3038 0x0000000003a34690 code [0x0000000003a347e0, 0x0000000003a348d0]
+Event: 5.688 Thread 0x000000001dd48800 3039       1       java.lang.Class::privateGetDeclaredFields (67 bytes)
+Event: 5.689 Thread 0x000000001dd48800 nmethod 3039 0x0000000003a34910 code [0x0000000003a34ac0, 0x0000000003a34e68]
+Event: 5.693 Thread 0x000000001dd48800 3040       1       java.lang.ThreadLocal::set (30 bytes)
+Event: 5.694 Thread 0x000000001dd48800 nmethod 3040 0x0000000003a350d0 code [0x0000000003a35240, 0x0000000003a35408]
+Event: 5.713 Thread 0x000000001dd48800 3041   !   1       com.sun.proxy.$Proxy39::annotationType (29 bytes)
+Event: 5.713 Thread 0x000000001dd48800 nmethod 3041 0x0000000003a35510 code [0x0000000003a35680, 0x0000000003a358f8]
+Event: 5.723 Thread 0x000000001dd48800 3042       1       org.springframework.core.io.support.PathMatchingResourcePatternResolver$$Lambda$218/1152234311::apply (8 bytes)
+Event: 5.724 Thread 0x000000001dd48800 nmethod 3042 0x0000000003a35a50 code [0x0000000003a35bc0, 0x0000000003a35d28]
+Event: 5.725 Thread 0x000000001dd48800 3043       1       org.springframework.util.StringUtils::tokenizeToStringArray (85 bytes)
+Event: 5.726 Thread 0x000000001dd48800 nmethod 3043 0x0000000003a35e10 code [0x0000000003a35fe0, 0x0000000003a36518]
+Event: 5.726 Thread 0x000000001dd48800 3044       1       org.springframework.util.AntPathMatcher::doMatch (619 bytes)
+Event: 5.729 Thread 0x000000001dd48800 nmethod 3044 0x0000000003a369d0 code [0x0000000003a36cc0, 0x0000000003a37a78]
+Event: 5.729 Thread 0x000000001dd48800 3045       1       org.springframework.core.io.FileSystemResource::hashCode (8 bytes)
+Event: 5.729 Thread 0x000000001dd48800 nmethod 3045 0x0000000003a38d50 code [0x0000000003a38ea0, 0x0000000003a38fe8]
+Event: 5.730 Thread 0x000000001dd48800 3046       1       org.springframework.core.type.AnnotationMetadata::hasAnnotation (13 bytes)
+Event: 5.730 Thread 0x000000001dd48800 nmethod 3046 0x0000000003a39090 code [0x0000000003a39200, 0x0000000003a39358]
+Event: 5.730 Thread 0x000000001dd48800 3047       1       org.springframework.core.type.filter.AnnotationTypeFilter::matchSelf (52 bytes)
+Event: 5.731 Thread 0x000000001dd48800 nmethod 3047 0x0000000003a39410 code [0x0000000003a395a0, 0x0000000003a39858]
+Event: 5.735 Thread 0x000000001dd48800 3048       1       java.lang.invoke.MemberName::equals (69 bytes)
+Event: 5.736 Thread 0x000000001dd48800 nmethod 3048 0x0000000003a39a10 code [0x0000000003a39bc0, 0x0000000003a39f98]
+Event: 5.780 Thread 0x000000001dd48800 3049       1       java.util.Calendar::internalGet (7 bytes)
+Event: 5.780 Thread 0x000000001dd48800 nmethod 3049 0x0000000003a3a150 code [0x0000000003a3a2a0, 0x0000000003a3a3d0]
+Event: 5.860 Thread 0x000000001dd48800 3050       1       java.util.Locale::getLanguage (8 bytes)
+Event: 5.861 Thread 0x000000001dd48800 nmethod 3050 0x0000000003a3a490 code [0x0000000003a3a5e0, 0x0000000003a3a6f0]
+Event: 6.115 Thread 0x000000001dd48800 3051       1       java.util.Arrays::equals (54 bytes)
+Event: 6.115 Thread 0x000000001dd48800 nmethod 3051 0x0000000003a3a790 code [0x0000000003a3a900, 0x0000000003a3aab0]
+Event: 6.185 Thread 0x000000001dd48800 3052       1       java.io.ObjectInputStream$BlockDataInputStream::setBlockDataMode (74 bytes)
+Event: 6.186 Thread 0x000000001dd48800 nmethod 3052 0x0000000003a3ab90 code [0x0000000003a3ad00, 0x0000000003a3af28]
+Event: 6.186 Thread 0x000000001dd48800 3053       1       java.io.ObjectOutputStream::writeUTF (9 bytes)
+Event: 6.186 Thread 0x000000001dd48800 nmethod 3053 0x0000000003a3afd0 code [0x0000000003a3b140, 0x0000000003a3b2b8]
+Event: 6.251 Thread 0x000000001dd48800 3054       1       java.util.concurrent.ConcurrentHashMap$MapEntry::getValue (5 bytes)
+Event: 6.251 Thread 0x000000001dd48800 nmethod 3054 0x0000000003a3b390 code [0x0000000003a3b4e0, 0x0000000003a3b5f0]
+Event: 6.253 Thread 0x000000001dd48800 3055       1       sun.misc.CompoundEnumeration::hasMoreElements (5 bytes)
+Event: 6.254 Thread 0x000000001dd48800 nmethod 3055 0x0000000003a3b650 code [0x0000000003a3b7a0, 0x0000000003a3b8c8]
+Event: 6.297 Thread 0x000000001dd48800 3056       1       sun.nio.cs.UTF_8::historicalName (3 bytes)
+Event: 6.297 Thread 0x000000001dd48800 nmethod 3056 0x0000000003a3b950 code [0x0000000003a3baa0, 0x0000000003a3bbb0]
+Event: 6.416 Thread 0x000000001dd48800 3057       1       java.lang.invoke.MethodHandleImpl$IntrinsicMethodHandle::<init> (20 bytes)
+Event: 6.416 Thread 0x000000001dd48800 nmethod 3057 0x0000000003a3be10 code [0x0000000003a3bf80, 0x0000000003a3c1d8]
+Event: 6.416 Thread 0x000000001dd48800 3058       1       java.lang.invoke.MethodType::dropParameterTypes (162 bytes)
+Event: 6.417 Thread 0x000000001dd48800 nmethod 3058 0x0000000003a3c2d0 code [0x0000000003a3c4e0, 0x0000000003a3cb48]
+Event: 6.417 Thread 0x000000001dd48800 3059       1       java.lang.invoke.LambdaFormEditor$Transform::of (49 bytes)
+Event: 6.418 Thread 0x000000001dd48800 nmethod 3059 0x0000000003a3d010 code [0x0000000003a3d1a0, 0x0000000003a3d598]
+Event: 6.418 Thread 0x000000001dd48800 3060       1       java.lang.invoke.MethodHandle::bindTo (19 bytes)
+Event: 6.419 Thread 0x000000001dd48800 nmethod 3060 0x0000000003a3d7d0 code [0x0000000003a3d980, 0x0000000003a3dcc8]
+Event: 6.446 Thread 0x000000001dd48800 3061       1       org.apache.logging.log4j.Level::getStandardLevel (5 bytes)
+Event: 6.446 Thread 0x000000001dd48800 nmethod 3061 0x0000000003a3df90 code [0x0000000003a3e0e0, 0x0000000003a3e1f0]
+Event: 6.490 Thread 0x000000001dd48800 3062       1       java.net.URLClassLoader$3$1::run (5 bytes)
+Event: 6.491 Thread 0x000000001dd48800 nmethod 3062 0x0000000003a3ed50 code [0x0000000003a3eec0, 0x0000000003a3f098]
+Event: 6.491 Thread 0x000000001dd48800 3063       1       java.net.URLClassLoader$3$1::run (33 bytes)
+Event: 6.491 Thread 0x000000001dd48800 nmethod 3063 0x0000000003a3f1d0 code [0x0000000003a3f340, 0x0000000003a3f518]
+Event: 6.494 Thread 0x000000001dd48800 3064       1       sun.misc.URLClassPath::access$000 (6 bytes)
+Event: 6.494 Thread 0x000000001dd48800 nmethod 3064 0x0000000003a3f610 code [0x0000000003a3f760, 0x0000000003a3f868]
+Event: 6.513 Thread 0x000000001dd48800 3065   !   1       java.lang.Class::newInstance (155 bytes)
+Event: 6.515 Thread 0x000000001dd48800 nmethod 3065 0x0000000003a3f910 code [0x0000000003a3fb60, 0x0000000003a403e8]
+Event: 6.583 Thread 0x000000001dd48800 3066       1       java.util.regex.Pattern::closure (477 bytes)
+Event: 6.587 Thread 0x000000001dd48800 nmethod 3066 0x0000000003a40bd0 code [0x0000000003a40f00, 0x0000000003a42528]
+Event: 6.614 Thread 0x000000001dd48800 3067       1       java.util.regex.Pattern$BitClass::isSatisfiedBy (22 bytes)
+Event: 6.614 Thread 0x000000001dd48800 nmethod 3067 0x0000000003a43f10 code [0x0000000003a44060, 0x0000000003a441d0]
+Event: 6.626 Thread 0x000000001dd48800 3068       1       java.util.zip.ZipFile::access$300 (5 bytes)
+Event: 6.626 Thread 0x000000001dd48800 nmethod 3068 0x0000000003a444d0 code [0x0000000003a44620, 0x0000000003a44710]
+Event: 6.629 Thread 0x000000001dd48800 3069       1       sun.misc.FDBigInteger::size (10 bytes)
+Event: 6.629 Thread 0x000000001dd48800 nmethod 3069 0x0000000003a46b90 code [0x0000000003a46ce0, 0x0000000003a46df0]
+Event: 6.954 Thread 0x000000001dd48800 3070   !   1       java.io.ObjectOutputStream::defaultWriteFields (270 bytes)
+Event: 6.956 Thread 0x000000001dd48800 nmethod 3070 0x0000000003a46e50 code [0x0000000003a47040, 0x0000000003a476b8]
+Event: 6.956 Thread 0x000000001dd48800 3073       1       java.io.ObjectStreamClass$FieldReflector::getPrimFieldValues (317 bytes)
+Event: 6.957 Thread 0x000000001dd48800 nmethod 3073 0x0000000003a47dd0 code [0x0000000003a47fc0, 0x0000000003a48588]
+Event: 6.957 Thread 0x000000001dd48800 3071       1       java.io.ObjectStreamClass::checkDefaultSerialize (20 bytes)
+Event: 6.957 Thread 0x000000001dd48800 nmethod 3071 0x0000000003a48cd0 code [0x0000000003a48e40, 0x0000000003a49058]
+Event: 6.957 Thread 0x000000001dd48800 3072       1       java.io.ObjectStreamClass::getPrimFieldValues (10 bytes)
+Event: 6.957 Thread 0x000000001dd48800 nmethod 3072 0x0000000003a491d0 code [0x0000000003a49320, 0x0000000003a49468]
+Event: 6.957 Thread 0x000000001dd48800 3074       1       java.io.ObjectStreamClass::getObjFieldValues (10 bytes)
+Event: 6.958 Thread 0x000000001dd48800 nmethod 3074 0x0000000003a49510 code [0x0000000003a49660, 0x0000000003a497a8]
+Event: 7.000 Thread 0x000000001dd48800 3075       1       java.text.MessageFormat::applyPattern (422 bytes)
+Event: 7.004 Thread 0x000000001dd48800 nmethod 3075 0x0000000003a4a390 code [0x0000000003a4a6e0, 0x0000000003a4c728]
+Event: 7.004 Thread 0x000000001dd48800 3076       1       com.mysql.cj.conf.PropertyKey::getKeyName (5 bytes)
+Event: 7.005 Thread 0x000000001dd48800 nmethod 3076 0x0000000003a4e690 code [0x0000000003a4e7e0, 0x0000000003a4e8f0]
+Event: 7.005 Thread 0x000000001dd48800 3077       1       com.mysql.cj.conf.PropertyKey::getCcAlias (5 bytes)
+Event: 7.005 Thread 0x000000001dd48800 nmethod 3077 0x0000000003a4e950 code [0x0000000003a4eaa0, 0x0000000003a4ebb0]
+Event: 7.006 Thread 0x000000001dd48800 3078   !   1       java.util.Locale::getDefault (132 bytes)
+Event: 7.007 Thread 0x000000001dd48800 nmethod 3078 0x0000000003a4ec10 code [0x0000000003a4eda0, 0x0000000003a4f378]
+Event: 7.008 Thread 0x000000001dd48800 3079       1       java.util.ResourceBundle::getObject (82 bytes)
+Event: 7.009 Thread 0x000000001dd48800 nmethod 3079 0x0000000003a4fa10 code [0x0000000003a4fc00, 0x0000000003a50198]
+Event: 7.009 Thread 0x000000001dd48800 3080       1       com.mysql.cj.conf.AbstractPropertyDefinition::getPropertyKey (5 bytes)
+Event: 7.009 Thread 0x000000001dd48800 nmethod 3080 0x0000000003a50590 code [0x0000000003a506e0, 0x0000000003a507f0]
+Event: 7.012 Thread 0x000000001dd48800 3081       1       com.mysql.cj.conf.AbstractPropertyDefinition::getDefaultValue (5 bytes)
+Event: 7.012 Thread 0x000000001dd48800 nmethod 3081 0x0000000003a50850 code [0x0000000003a509a0, 0x0000000003a50ab0]
+Event: 7.013 Thread 0x000000001dd48800 3082       1       com.mysql.cj.conf.AbstractRuntimeProperty::getPropertyDefinition (5 bytes)
+Event: 7.014 Thread 0x000000001dd48800 nmethod 3082 0x0000000003a50b10 code [0x0000000003a50c60, 0x0000000003a50d70]
+Event: 7.014 Thread 0x000000001dd48800 3083       1       com.mysql.cj.conf.AbstractPropertyDefinition::getName (5 bytes)
+Event: 7.015 Thread 0x000000001dd48800 nmethod 3083 0x0000000003a50dd0 code [0x0000000003a50f20, 0x0000000003a51030]
+Event: 7.015 Thread 0x000000001dd48800 3084       1       com.mysql.cj.conf.AbstractPropertyDefinition::getCcAlias (5 bytes)
+Event: 7.015 Thread 0x000000001dd48800 nmethod 3084 0x0000000003a51090 code [0x0000000003a511e0, 0x0000000003a512f0]
+Event: 7.019 Thread 0x000000001dd48800 3085       1       ch.qos.logback.core.pattern.FormattingConverter::write (154 bytes)
+Event: 7.020 Thread 0x000000001dd48800 nmethod 3085 0x0000000003a51350 code [0x0000000003a51560, 0x0000000003a519b8]
+Event: 7.038 Thread 0x000000001dd48800 3086       1       java.util.ResourceBundle$CacheKey::hashCode (5 bytes)
+Event: 7.038 Thread 0x000000001dd48800 nmethod 3086 0x0000000003a51e90 code [0x0000000003a51fe0, 0x0000000003a520f0]
+Event: 7.039 Thread 0x000000001dd48800 3087       1       java.util.Locale::hashCode (41 bytes)
+Event: 7.039 Thread 0x000000001dd48800 nmethod 3087 0x0000000003a52150 code [0x0000000003a522c0, 0x0000000003a52478]
+
+GC Heap History (24 events):
+Event: 1.402 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 75776K, used 65015K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 99% used [0x000000076bd00000,0x000000076fc7dea0,0x000000076fc80000)
+  from space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+  to   space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+ ParOldGen       total 173568K, used 0K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3600000,0x00000006cdf80000)
+ Metaspace       used 11949K, capacity 12242K, committed 12544K, reserved 1060864K
+  class space    used 1338K, capacity 1445K, committed 1536K, reserved 1048576K
+Event: 1.410 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 75776K, used 4781K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bd00000,0x000000076bd00000,0x000000076fc80000)
+  from space 10752K, 44% used [0x000000076fc80000,0x000000077012b7f0,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+ ParOldGen       total 173568K, used 16K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3604000,0x00000006cdf80000)
+ Metaspace       used 11949K, capacity 12242K, committed 12544K, reserved 1060864K
+  class space    used 1338K, capacity 1445K, committed 1536K, reserved 1048576K
+}
+Event: 2.246 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 75776K, used 69805K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 100% used [0x000000076bd00000,0x000000076fc80000,0x000000076fc80000)
+  from space 10752K, 44% used [0x000000076fc80000,0x000000077012b7f0,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+ ParOldGen       total 173568K, used 16K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3604000,0x00000006cdf80000)
+ Metaspace       used 18128K, capacity 18888K, committed 19072K, reserved 1067008K
+  class space    used 2178K, capacity 2363K, committed 2432K, reserved 1048576K
+Event: 2.262 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 75776K, used 9992K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bd00000,0x000000076bd00000,0x000000076fc80000)
+  from space 10752K, 92% used [0x0000000770700000,0x00000007710c23d0,0x0000000771180000)
+  to   space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+ ParOldGen       total 173568K, used 24K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3606000,0x00000006cdf80000)
+ Metaspace       used 18128K, capacity 18888K, committed 19072K, reserved 1067008K
+  class space    used 2178K, capacity 2363K, committed 2432K, reserved 1048576K
+}
+Event: 2.430 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 75776K, used 29981K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 30% used [0x000000076bd00000,0x000000076d0852a8,0x000000076fc80000)
+  from space 10752K, 92% used [0x0000000770700000,0x00000007710c23d0,0x0000000771180000)
+  to   space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+ ParOldGen       total 173568K, used 24K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3606000,0x00000006cdf80000)
+ Metaspace       used 20294K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2470K, capacity 2679K, committed 2688K, reserved 1048576K
+Event: 2.439 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 75776K, used 6925K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bd00000,0x000000076bd00000,0x000000076fc80000)
+  from space 10752K, 64% used [0x000000076fc80000,0x00000007703437e0,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+ ParOldGen       total 173568K, used 32K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3608000,0x00000006cdf80000)
+ Metaspace       used 20294K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2470K, capacity 2679K, committed 2688K, reserved 1048576K
+}
+Event: 2.439 GC heap before
+{Heap before GC invocations=4 (full 1):
+ PSYoungGen      total 75776K, used 6925K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bd00000,0x000000076bd00000,0x000000076fc80000)
+  from space 10752K, 64% used [0x000000076fc80000,0x00000007703437e0,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+ ParOldGen       total 173568K, used 32K [0x00000006c3600000, 0x00000006cdf80000, 0x000000076bd00000)
+  object space 173568K, 0% used [0x00000006c3600000,0x00000006c3608000,0x00000006cdf80000)
+ Metaspace       used 20294K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2470K, capacity 2679K, committed 2688K, reserved 1048576K
+Event: 2.489 GC heap after
+Heap after GC invocations=4 (full 1):
+ PSYoungGen      total 75776K, used 0K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bd00000,0x000000076bd00000,0x000000076fc80000)
+  from space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+ ParOldGen       total 100864K, used 6659K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c80c70,0x00000006c9880000)
+ Metaspace       used 20294K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2470K, capacity 2679K, committed 2688K, reserved 1048576K
+}
+Event: 2.897 GC heap before
+{Heap before GC invocations=5 (full 1):
+ PSYoungGen      total 75776K, used 65024K [0x000000076bd00000, 0x0000000771180000, 0x00000007c0000000)
+  eden space 65024K, 100% used [0x000000076bd00000,0x000000076fc80000,0x000000076fc80000)
+  from space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000770700000,0x0000000770700000,0x0000000771180000)
+ ParOldGen       total 100864K, used 6659K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c80c70,0x00000006c9880000)
+ Metaspace       used 22241K, capacity 23194K, committed 23472K, reserved 1069056K
+  class space    used 2748K, capacity 2990K, committed 3072K, reserved 1048576K
+Event: 2.902 GC heap after
+Heap after GC invocations=5 (full 1):
+ PSYoungGen      total 75776K, used 3367K [0x000000076bd00000, 0x0000000773300000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bd00000,0x000000076bd00000,0x000000076fc80000)
+  from space 10752K, 31% used [0x0000000770700000,0x0000000770a49dd8,0x0000000771180000)
+  to   space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+ ParOldGen       total 100864K, used 6667K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c82c70,0x00000006c9880000)
+ Metaspace       used 22241K, capacity 23194K, committed 23472K, reserved 1069056K
+  class space    used 2748K, capacity 2990K, committed 3072K, reserved 1048576K
+}
+Event: 3.800 GC heap before
+{Heap before GC invocations=6 (full 1):
+ PSYoungGen      total 75776K, used 68387K [0x000000076bd00000, 0x0000000773300000, 0x00000007c0000000)
+  eden space 65024K, 99% used [0x000000076bd00000,0x000000076fc7ef90,0x000000076fc80000)
+  from space 10752K, 31% used [0x0000000770700000,0x0000000770a49dd8,0x0000000771180000)
+  to   space 10752K, 0% used [0x000000076fc80000,0x000000076fc80000,0x0000000770700000)
+ ParOldGen       total 100864K, used 6667K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c82c70,0x00000006c9880000)
+ Metaspace       used 25136K, capacity 26478K, committed 26624K, reserved 1073152K
+  class space    used 3199K, capacity 3515K, committed 3584K, reserved 1048576K
+Event: 3.806 GC heap after
+Heap after GC invocations=6 (full 1):
+ PSYoungGen      total 75776K, used 7022K [0x000000076bd00000, 0x0000000773000000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bd00000,0x000000076bd00000,0x000000076fc80000)
+  from space 10752K, 65% used [0x000000076fc80000,0x000000077035baf0,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000772580000,0x0000000772580000,0x0000000773000000)
+ ParOldGen       total 100864K, used 6675K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c84c70,0x00000006c9880000)
+ Metaspace       used 25136K, capacity 26478K, committed 26624K, reserved 1073152K
+  class space    used 3199K, capacity 3515K, committed 3584K, reserved 1048576K
+}
+Event: 5.015 GC heap before
+{Heap before GC invocations=7 (full 1):
+ PSYoungGen      total 75776K, used 72046K [0x000000076bd00000, 0x0000000773000000, 0x00000007c0000000)
+  eden space 65024K, 100% used [0x000000076bd00000,0x000000076fc80000,0x000000076fc80000)
+  from space 10752K, 65% used [0x000000076fc80000,0x000000077035baf0,0x0000000770700000)
+  to   space 10752K, 0% used [0x0000000772580000,0x0000000772580000,0x0000000773000000)
+ ParOldGen       total 100864K, used 6675K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c84c70,0x00000006c9880000)
+ Metaspace       used 30125K, capacity 32134K, committed 32384K, reserved 1077248K
+  class space    used 3945K, capacity 4355K, committed 4480K, reserved 1048576K
+Event: 5.029 GC heap after
+Heap after GC invocations=7 (full 1):
+ PSYoungGen      total 105472K, used 10655K [0x000000076bd00000, 0x0000000773180000, 0x00000007c0000000)
+  eden space 94720K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000771980000)
+  from space 10752K, 99% used [0x0000000772580000,0x0000000772fe7dd0,0x0000000773000000)
+  to   space 12288K, 0% used [0x0000000771980000,0x0000000771980000,0x0000000772580000)
+ ParOldGen       total 100864K, used 6683K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c86c70,0x00000006c9880000)
+ Metaspace       used 30125K, capacity 32134K, committed 32384K, reserved 1077248K
+  class space    used 3945K, capacity 4355K, committed 4480K, reserved 1048576K
+}
+Event: 5.487 GC heap before
+{Heap before GC invocations=8 (full 1):
+ PSYoungGen      total 105472K, used 105375K [0x000000076bd00000, 0x0000000773180000, 0x00000007c0000000)
+  eden space 94720K, 100% used [0x000000076bd00000,0x0000000771980000,0x0000000771980000)
+  from space 10752K, 99% used [0x0000000772580000,0x0000000772fe7dd0,0x0000000773000000)
+  to   space 12288K, 0% used [0x0000000771980000,0x0000000771980000,0x0000000772580000)
+ ParOldGen       total 100864K, used 6683K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c86c70,0x00000006c9880000)
+ Metaspace       used 31107K, capacity 33204K, committed 33536K, reserved 1079296K
+  class space    used 4070K, capacity 4486K, committed 4608K, reserved 1048576K
+Event: 5.500 GC heap after
+Heap after GC invocations=8 (full 1):
+ PSYoungGen      total 107008K, used 8300K [0x000000076bd00000, 0x0000000775e80000, 0x00000007c0000000)
+  eden space 94720K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000771980000)
+  from space 12288K, 67% used [0x0000000771980000,0x000000077219b060,0x0000000772580000)
+  to   space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+ ParOldGen       total 100864K, used 6691K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c88c70,0x00000006c9880000)
+ Metaspace       used 31107K, capacity 33204K, committed 33536K, reserved 1079296K
+  class space    used 4070K, capacity 4486K, committed 4608K, reserved 1048576K
+}
+Event: 5.936 GC heap before
+{Heap before GC invocations=9 (full 1):
+ PSYoungGen      total 107008K, used 30583K [0x000000076bd00000, 0x0000000775e80000, 0x00000007c0000000)
+  eden space 94720K, 23% used [0x000000076bd00000,0x000000076d2c2f00,0x0000000771980000)
+  from space 12288K, 67% used [0x0000000771980000,0x000000077219b060,0x0000000772580000)
+  to   space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+ ParOldGen       total 100864K, used 6691K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c88c70,0x00000006c9880000)
+ Metaspace       used 33358K, capacity 35450K, committed 35496K, reserved 1079296K
+  class space    used 4377K, capacity 4823K, committed 4864K, reserved 1048576K
+Event: 5.950 GC heap after
+Heap after GC invocations=9 (full 1):
+ PSYoungGen      total 152576K, used 9623K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000774600000)
+  from space 12288K, 78% used [0x0000000775280000,0x0000000775be5ec0,0x0000000775e80000)
+  to   space 12800K, 0% used [0x0000000774600000,0x0000000774600000,0x0000000775280000)
+ ParOldGen       total 100864K, used 6699K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c8ac70,0x00000006c9880000)
+ Metaspace       used 33358K, capacity 35450K, committed 35496K, reserved 1079296K
+  class space    used 4377K, capacity 4823K, committed 4864K, reserved 1048576K
+}
+Event: 5.950 GC heap before
+{Heap before GC invocations=10 (full 2):
+ PSYoungGen      total 152576K, used 9623K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000774600000)
+  from space 12288K, 78% used [0x0000000775280000,0x0000000775be5ec0,0x0000000775e80000)
+  to   space 12800K, 0% used [0x0000000774600000,0x0000000774600000,0x0000000775280000)
+ ParOldGen       total 100864K, used 6699K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 6% used [0x00000006c3600000,0x00000006c3c8ac70,0x00000006c9880000)
+ Metaspace       used 33358K, capacity 35450K, committed 35496K, reserved 1079296K
+  class space    used 4377K, capacity 4823K, committed 4864K, reserved 1048576K
+Event: 6.029 GC heap after
+Heap after GC invocations=10 (full 2):
+ PSYoungGen      total 152576K, used 0K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000774600000)
+  from space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+  to   space 12800K, 0% used [0x0000000774600000,0x0000000774600000,0x0000000775280000)
+ ParOldGen       total 100864K, used 13937K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 13% used [0x00000006c3600000,0x00000006c439c548,0x00000006c9880000)
+ Metaspace       used 33358K, capacity 35450K, committed 35496K, reserved 1079296K
+  class space    used 4377K, capacity 4823K, committed 4864K, reserved 1048576K
+}
+Event: 6.640 GC heap before
+{Heap before GC invocations=11 (full 2):
+ PSYoungGen      total 152576K, used 24944K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 17% used [0x000000076bd00000,0x000000076d55c1f8,0x0000000774600000)
+  from space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+  to   space 12800K, 0% used [0x0000000774600000,0x0000000774600000,0x0000000775280000)
+ ParOldGen       total 100864K, used 13937K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 13% used [0x00000006c3600000,0x00000006c439c548,0x00000006c9880000)
+ Metaspace       used 36937K, capacity 39146K, committed 39296K, reserved 1091584K
+  class space    used 5020K, capacity 5437K, committed 5504K, reserved 1048576K
+Event: 6.647 GC heap after
+Heap after GC invocations=11 (full 2):
+ PSYoungGen      total 153088K, used 4222K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000774600000)
+  from space 12800K, 32% used [0x0000000774600000,0x0000000774a1f9f0,0x0000000775280000)
+  to   space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+ ParOldGen       total 100864K, used 13945K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 13% used [0x00000006c3600000,0x00000006c439e548,0x00000006c9880000)
+ Metaspace       used 36937K, capacity 39146K, committed 39296K, reserved 1091584K
+  class space    used 5020K, capacity 5437K, committed 5504K, reserved 1048576K
+}
+Event: 6.647 GC heap before
+{Heap before GC invocations=12 (full 3):
+ PSYoungGen      total 153088K, used 4222K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000774600000)
+  from space 12800K, 32% used [0x0000000774600000,0x0000000774a1f9f0,0x0000000775280000)
+  to   space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+ ParOldGen       total 100864K, used 13945K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 13% used [0x00000006c3600000,0x00000006c439e548,0x00000006c9880000)
+ Metaspace       used 36937K, capacity 39146K, committed 39296K, reserved 1091584K
+  class space    used 5020K, capacity 5437K, committed 5504K, reserved 1048576K
+Event: 6.953 GC heap after
+Heap after GC invocations=12 (full 3):
+ PSYoungGen      total 153088K, used 0K [0x000000076bd00000, 0x0000000776280000, 0x00000007c0000000)
+  eden space 140288K, 0% used [0x000000076bd00000,0x000000076bd00000,0x0000000774600000)
+  from space 12800K, 0% used [0x0000000774600000,0x0000000774600000,0x0000000775280000)
+  to   space 12288K, 0% used [0x0000000775280000,0x0000000775280000,0x0000000775e80000)
+ ParOldGen       total 100864K, used 16093K [0x00000006c3600000, 0x00000006c9880000, 0x000000076bd00000)
+  object space 100864K, 15% used [0x00000006c3600000,0x00000006c45b7690,0x00000006c9880000)
+ Metaspace       used 36937K, capacity 39146K, committed 39296K, reserved 1089536K
+  class space    used 5020K, capacity 5437K, committed 5504K, reserved 1048576K
+}
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (250 events):
+Event: 2.228 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': org.slf4j.impl.StaticMDCBinder.getSingleton()Lorg/slf4j/impl/StaticMDCBinder;> (0x000000076fae19f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 620]
+Event: 2.321 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAnnotationTypes$0(Lorg/springframework/core/annotation/MergedAnnotation;)Ljava/lang/String;> (0x000000076c338648) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\
+Event: 2.327 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getMetaAnnotationTypes$1(Lorg/springframework/core/annotation/MergedAnnotation;)Ljava/lang/String;> (0x000000076c361a10) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share
+Event: 2.382 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c965898) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 2.383 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ca81fd0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 2.496 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x000000076bd764b8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.499 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076bd7a098) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 2.499 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076bd7bfc8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 2.501 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/context/annotation/ConfigurationClassPostProcessorCustomizer> (0x000000076bd98ad0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, l
+Event: 2.505 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/support/BeanDefinitionRegistryPostProcessorCustomizer> (0x000000076beba3d0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary
+Event: 2.506 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/config/BeanFactoryPostProcessorCustomizer> (0x000000076bed5888) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 2
+Event: 2.507 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/core/PriorityOrderedCustomizer> (0x000000076bee9e00) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.507 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/core/OrderedCustomizer> (0x000000076befb5b0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.508 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/context/ResourceLoaderAwareCustomizer> (0x000000076bf7dcb0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.509 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076bf92498) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.510 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/context/ApplicationStartupAwareCustomizer> (0x000000076bfa8ed0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.510 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076bfbdb40) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.511 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanClassLoaderAwareCustomizer> (0x000000076bfd4fa0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.512 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076bfe97a0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.512 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/context/EnvironmentAwareCustomizer> (0x000000076c034488) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.513 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076c048b68) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.568 Thread 0x00000000200fd800 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x000000076c6c64a0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 653]
+Event: 2.569 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076c6ed7c0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 2.770 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$or$2(Ljava/util/function/Predicate;Ljava/lang/Object;)Z> (0x000000076d30dc20) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 620]
+Event: 2.966 Thread 0x0000000020329800 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x000000076c16d948) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 653]
+Event: 3.006 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAllAnnotationAttributes$0(Lorg/springframework/util/MultiValueMap;)Lorg/springframework/util/MultiValueMap;> (0x000000076c40f700) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotsp
+Event: 3.007 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$identity$2(Ljava/lang/Object;)Ljava/lang/Object;> (0x000000076c425868) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 620]
+Event: 3.073 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076c839150) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 3.317 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de0fe58) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.317 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de11558) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.385 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e32b9b0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.385 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e32c950) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.392 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e3e6098) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.397 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e43be40) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.398 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e449380) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.461 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e8daa00) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.463 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e8fde10) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.481 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e9dda98) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.484 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ea082a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.512 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ebf7d10) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.571 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076efcbef0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.577 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076c83e248) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 3.602 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076f164fc0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.646 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076f436438) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.648 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076f44b6f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.654 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076f495740) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.697 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getRequiredAttribute$0(Ljava/lang/String;)Ljava/lang/IllegalArgumentException;> (0x000000076f704df8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\link
+Event: 3.747 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa0e080) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.749 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa1b7c0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.752 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa332d0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.753 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa38c58) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.753 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa3a9a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.753 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa3b838) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.753 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa3dc68) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.754 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa3f5e0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.754 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa41080) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.754 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fa42120) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.777 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fb61930) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.784 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fba8ee0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.788 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fbe89a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.793 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076fc2a680) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.819 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$and$5([Ljava/lang/Object;)Ljava/util/stream/Stream;> (0x000000076bd5d410) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 620]
+Event: 3.858 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076beb3d20) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.860 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076bedf5e8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.861 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076beeaf40) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.862 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076beed900) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.862 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076bef21a0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.862 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076bef37f0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.868 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076bf57418) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.893 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c085a60) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.899 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c0ccd88) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.960 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c3d4168) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.984 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c55d130) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 3.991 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c5b4c48) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.018 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c781de0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.081 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076cb54418) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 4.208 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d27fef8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.208 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d2815f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.208 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d283148) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.208 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d2855d0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.211 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d2a23e0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.240 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d3d7b18) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.240 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d3d8bf0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.240 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d3da048) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.240 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d3db128) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.294 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x000000076d67bfe8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.294 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d67f138) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.295 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/framework/ProxyConfigCustomizer> (0x000000076d695ae0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.297 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/framework/ProxyProcessorSupportCustomizer> (0x000000076d6ba1a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.298 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/framework/autoproxy/AbstractAutoProxyCreatorCustomizer> (0x000000076d6dae70) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, lin
+Event: 4.298 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d6df3a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.298 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d6e2508) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.298 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d6e3910) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.299 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d6e5640) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.300 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/framework/autoproxy/AbstractAdvisorAutoProxyCreatorCustomizer> (0x000000076d70ecb8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.c
+Event: 4.301 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/aspectj/autoproxy/AspectJAwareAdvisorAutoProxyCreatorCustomizer> (0x000000076d731418) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary
+Event: 4.302 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/aspectj/annotation/AnnotationAwareAspectJAutoProxyCreatorCustomizer> (0x000000076d753360) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictio
+Event: 4.302 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d756180) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.304 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/config/SmartInstantiationAwareBeanPostProcessorCustomizer> (0x000000076d787908) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictio
+Event: 4.304 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d7890f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.304 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d78bb30) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.305 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/config/InstantiationAwareBeanPostProcessorCustomizer> (0x000000076d7a9760) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.
+Event: 4.305 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d7ad5f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.306 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/config/BeanPostProcessorCustomizer> (0x000000076d7c6950) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.306 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanFactoryAwareCustomizer> (0x000000076d7de760) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.307 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076d7f34c0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.307 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/core/OrderedCustomizer> (0x000000076d804c00) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.308 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanClassLoaderAwareCustomizer> (0x000000076d81cd68) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.309 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076d831558) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.309 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/framework/AopInfrastructureBeanCustomizer> (0x000000076d848a10) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.322 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$and$0(Lorg/springframework/util/ReflectionUtils$MethodFilter;Ljava/lang/reflect/Method;)Z> (0x000000076d9323e0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\inter
+Event: 4.325 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$thenComparing$36697e65$1(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I> (0x000000076d96cf50) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpret
+Event: 4.346 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076da87fb0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.408 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x000000076dde58d0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.409 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/transaction/annotation/AbstractTransactionManagementConfigurationCustomizer> (0x000000076de094f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDi
+Event: 4.410 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/transaction/annotation/ProxyTransactionManagementConfigurationCustomizer> (0x000000076de2b960) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDicti
+Event: 4.411 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/context/annotation/ImportAwareCustomizer> (0x000000076de47ef8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.412 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076de5ddf8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.414 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de70568) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.416 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de85530) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.416 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de875c8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.416 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de88cb0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.416 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de8a658) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.416 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076de8cc10) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.456 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x000000076e14f9a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.457 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/security/config/annotation/method/configuration/GlobalMethodSecurityConfigurationCustomizer> (0x000000076e1769c0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\cl
+Event: 4.457 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e179368) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.457 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e17ce60) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.458 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/context/annotation/ImportAwareCustomizer> (0x000000076e19eb70) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.459 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076e1b3dc0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.460 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/SmartInitializingSingletonCustomizer> (0x000000076e1cd258) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.460 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanFactoryAwareCustomizer> (0x000000076e1e4bb0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.461 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076e1fa348) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.462 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e1feeb8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.463 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e20eb68) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.472 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e291a88) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.472 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e293870) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.472 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e295780) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.473 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e297108) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.473 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e29a4f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.483 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x000000076e33ddc0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.483 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/support/AbstractPointcutAdvisorCustomizer> (0x000000076e358af8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.484 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/security/access/intercept/aopalliance/MethodSecurityMetadataSourceAdvisorCustomizer> (0x000000076e37ef30) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\
+Event: 4.486 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanFactoryAwareCustomizer> (0x000000076e39e0a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.486 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x000000076e3b2cd0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.487 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/PointcutAdvisorCustomizer> (0x000000076e3c6388) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.487 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/aop/AdvisorCustomizer> (0x000000076e3d8d80) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.488 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/core/OrderedCustomizer> (0x000000076e3ec010) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 4.492 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e42ba18) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.513 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e551170) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.513 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e5535d8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.513 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e555998) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e557d48) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e55a0f8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e55c4a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e55eda0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e5616b8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e563b48) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e565ff8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e5683b8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e56a748) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e56cad8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e56f428) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.514 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e5717a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.515 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e573b38) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.515 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e575ef0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.515 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e578360) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.515 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e57a9f0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.520 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$map$1(Ljava/util/function/Function;)Ljava/util/stream/Stream;> (0x000000076e5d6d68) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, lin
+Event: 4.535 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e688718) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.536 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076e69e0a0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.627 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076cb59250) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 4.654 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ec26d38) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.655 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ec44728) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.657 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ec5fb20) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.661 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ec95898) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.683 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ed53c20) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.683 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ed54f68) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.684 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ed63460) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.699 Thread 0x0000000020329800 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x000000076ee053b8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 653]
+Event: 4.700 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ee0a780) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.701 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ee15a90) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.726 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076eefac58) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.792 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076f247b00) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.792 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076f248e48) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 4.792 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076f24a690) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.130 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076e7129d0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 5.276 Thread 0x0000000020329800 Exception <a 'java/io/FileNotFoundException'> (0x00000007710604e0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.328 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007711a8b40) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.328 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007711aa398) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.354 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x000000077127e138) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.354 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771281658) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.357 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/data/repository/core/support/RepositoryFactoryBeanSupportCustomizer> (0x00000007712a3ee8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary
+Event: 5.357 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712a6d80) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.357 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712a8cd0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.358 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712ad4d0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.359 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712c09d8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.359 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712c29a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.359 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712c47e8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.359 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712c6718) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.360 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007712c8048) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.365 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/data/repository/core/support/TransactionalRepositoryFactoryBeanSupportCustomizer> (0x0000000771312178) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\sys
+Event: 5.369 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/data/jpa/repository/support/JpaRepositoryFactoryBeanCustomizer> (0x000000077133eb18) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp,
+Event: 5.369 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771343410) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.369 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771345760) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.370 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771347620) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.374 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanFactoryAwareCustomizer> (0x000000077138e8b0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.377 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x00000007713a72a8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.379 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/InitializingBeanCustomizer> (0x00000007713c15f0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.381 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/data/repository/core/support/RepositoryFactoryInformationCustomizer> (0x00000007713e3148) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary
+Event: 5.381 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007713e4bb8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.381 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007713e7550) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.381 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007713e94f0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.384 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/FactoryBeanCustomizer> (0x00000007714072b0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.384 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771408190) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.385 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771409c38) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.388 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanClassLoaderAwareCustomizer> (0x0000000771428728) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.389 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x00000007714407a0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.390 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/BeanFactoryAwareCustomizer> (0x000000077145a5f0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.391 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x0000000771472aa0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.394 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/context/ApplicationEventPublisherAwareCustomizer> (0x000000077148ed88) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.395 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/AwareCustomizer> (0x00000007714a73e0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.397 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007714bd010) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.404 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x00000007714ed448) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.407 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/core/io/support/PropertiesLoaderSupportCustomizer> (0x000000077150dc70) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.410 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/config/PropertiesFactoryBeanCustomizer> (0x0000000771534be8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.410 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771537ef8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.410 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077153a920) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.413 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/FactoryBeanCustomizer> (0x0000000771567db0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.414 Thread 0x0000000020329800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/InitializingBeanCustomizer> (0x00000007715855e8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.423 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007715dcc88) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.423 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007715def80) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.427 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077161f898) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.428 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771622c58) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.436 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771685858) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.453 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0000000771773238) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.455 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007717ab670) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.456 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007717d2a90) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.482 Thread 0x0000000020329800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$static$0(Ljava/lang/Object;)Ljava/lang/Object;> (0x000000077193da08) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 620]
+Event: 5.552 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c0b8ec0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.562 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c123eb8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.566 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c15b4d8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.566 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c1701b8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.582 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c1f6bc8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.582 Thread 0x0000000020329800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076c1f8960) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 615]
+Event: 5.632 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076c40a730) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 6.186 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076c42bbf8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 6.954 Thread 0x00000000200ad000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x000000076bd01c10) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+Event: 7.017 Thread 0x0000000020329800 Exception <a 'java/lang/OutOfMemoryError'> (0x000000076c0d5870) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 737]
+Event: 7.017 Thread 0x0000000020329800 Exception <a 'java/lang/OutOfMemoryError'> (0x000000076c0d5870) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1505]
+
+Events (250 events):
+Event: 6.607 loading class com/zaxxer/hikari/util/UtilityElf$DefaultThreadFactory done
+Event: 6.607 loading class java/util/concurrent/ThreadPoolExecutor$DiscardPolicy
+Event: 6.607 loading class java/util/concurrent/ThreadPoolExecutor$DiscardPolicy done
+Event: 6.607 loading class com/zaxxer/hikari/util/ClockSource
+Event: 6.607 loading class com/zaxxer/hikari/util/ClockSource done
+Event: 6.608 loading class com/zaxxer/hikari/util/ClockSource$Factory
+Event: 6.608 loading class com/zaxxer/hikari/util/ClockSource$Factory done
+Event: 6.608 loading class com/zaxxer/hikari/util/ClockSource$NanosecondClockSource
+Event: 6.608 loading class com/zaxxer/hikari/util/ClockSource$NanosecondClockSource done
+Event: 6.609 loading class com/zaxxer/hikari/pool/PoolEntry
+Event: 6.609 loading class com/zaxxer/hikari/pool/PoolEntry done
+Event: 6.610 loading class java/util/concurrent/atomic/AtomicIntegerFieldUpdater
+Event: 6.610 loading class java/util/concurrent/atomic/AtomicIntegerFieldUpdater done
+Event: 6.610 loading class java/util/concurrent/atomic/AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl
+Event: 6.610 loading class java/util/concurrent/atomic/AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl done
+Event: 6.611 loading class java/util/concurrent/atomic/AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl$1
+Event: 6.611 loading class java/util/concurrent/atomic/AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl$1 done
+Event: 6.611 loading class com/zaxxer/hikari/util/FastList
+Event: 6.611 loading class com/zaxxer/hikari/util/FastList done
+Event: 6.612 loading class java/util/StringJoiner
+Event: 6.613 loading class java/util/StringJoiner done
+Event: 6.614 loading class com/mysql/cj/conf/ConnectionUrlParser$Pair
+Event: 6.614 loading class com/mysql/cj/conf/ConnectionUrlParser$Pair done
+Event: 6.615 loading class com/mysql/cj/conf/HostInfo
+Event: 6.615 loading class com/mysql/cj/conf/HostInfo done
+Event: 6.616 loading class com/mysql/cj/util/Util
+Event: 6.616 loading class com/mysql/cj/util/Util done
+Event: 6.618 loading class java/io/StringWriter
+Event: 6.619 loading class java/io/StringWriter done
+Event: 6.619 loading class com/mysql/cj/Constants
+Event: 6.619 loading class com/mysql/cj/Constants done
+Event: 6.620 loading class com/mysql/cj/Messages
+Event: 6.620 loading class com/mysql/cj/Messages done
+Event: 6.620 loading class com/mysql/cj/LocalizedErrorMessages
+Event: 6.620 loading class com/mysql/cj/LocalizedErrorMessages done
+Event: 6.625 loading class com/mysql/cj/LocalizedErrorMessages_en
+Event: 6.625 loading class com/mysql/cj/LocalizedErrorMessages_en done
+Event: 6.626 loading class com/mysql/cj/LocalizedErrorMessages_en_US
+Event: 6.626 loading class com/mysql/cj/LocalizedErrorMessages_en_US done
+Event: 6.627 loading class java/math/BigDecimal$1
+Event: 6.627 loading class java/math/BigDecimal$1 done
+Event: 6.628 loading class java/math/MathContext
+Event: 6.628 loading class java/math/MathContext done
+Event: 6.629 loading class com/mysql/cj/conf/url/SingleConnectionUrl
+Event: 6.629 loading class com/mysql/cj/conf/url/SingleConnectionUrl done
+Event: 6.629 loading class java/util/Collections$UnmodifiableMap$UnmodifiableEntrySet$UnmodifiableEntrySetSpliterator
+Event: 6.629 loading class java/util/Collections$UnmodifiableMap$UnmodifiableEntrySet$UnmodifiableEntrySetSpliterator done
+Event: 6.630 loading class java/util/HashMap$EntrySpliterator
+Event: 6.630 loading class java/util/HashMap$EntrySpliterator done
+Event: 6.630 loading class com/mysql/cj/conf/ConnectionUrl
+Event: 6.630 loading class com/mysql/cj/conf/ConnectionUrl done
+Event: 6.631 loading class com/mysql/cj/conf/ConnectionUrl
+Event: 6.631 loading class com/mysql/cj/conf/ConnectionUrl done
+Event: 6.631 loading class com/mysql/cj/conf/HostInfo
+Event: 6.631 loading class com/mysql/cj/conf/HostInfo done
+Event: 6.631 loading class com/mysql/cj/conf/HostInfo
+Event: 6.631 loading class com/mysql/cj/conf/HostInfo done
+Event: 6.631 loading class com/mysql/cj/conf/ConnectionUrl
+Event: 6.631 loading class com/mysql/cj/conf/ConnectionUrl done
+Event: 6.631 loading class com/mysql/cj/conf/HostInfo
+Event: 6.631 loading class com/mysql/cj/conf/HostInfo done
+Event: 6.632 loading class com/mysql/cj/jdbc/NonRegisteringDriver$1
+Event: 6.632 loading class com/mysql/cj/jdbc/NonRegisteringDriver$1 done
+Event: 6.633 loading class com/mysql/cj/jdbc/ConnectionImpl
+Event: 6.633 loading class com/mysql/cj/jdbc/ConnectionImpl done
+Event: 6.636 loading class com/mysql/cj/jdbc/JdbcConnection
+Event: 6.636 loading class com/mysql/cj/jdbc/JdbcConnection done
+Event: 6.637 loading class com/mysql/cj/MysqlConnection
+Event: 6.637 loading class com/mysql/cj/MysqlConnection done
+Event: 6.637 loading class com/mysql/cj/TransactionEventHandler
+Event: 6.637 loading class com/mysql/cj/TransactionEventHandler done
+Event: 6.638 loading class com/mysql/cj/Session$SessionEventListener
+Event: 6.638 loading class com/mysql/cj/Session$SessionEventListener done
+Event: 6.639 Executing VM operation: CollectForMetadataAllocation
+Event: 6.953 Executing VM operation: CollectForMetadataAllocation done
+Event: 6.954 loading class com/mysql/cj/exceptions/ExceptionInterceptor
+Event: 6.954 loading class com/mysql/cj/exceptions/ExceptionInterceptor done
+Event: 6.956 loading class com/mysql/cj/jdbc/ClientPreparedStatement
+Event: 6.956 loading class com/mysql/cj/jdbc/ClientPreparedStatement done
+Event: 6.958 loading class com/mysql/cj/jdbc/JdbcPreparedStatement
+Event: 6.958 loading class com/mysql/cj/jdbc/JdbcPreparedStatement done
+Event: 6.959 loading class com/mysql/cj/jdbc/JdbcStatement
+Event: 6.959 loading class com/mysql/cj/jdbc/JdbcStatement done
+Event: 6.959 loading class com/mysql/cj/Query
+Event: 6.959 loading class com/mysql/cj/Query done
+Event: 6.963 loading class com/mysql/cj/jdbc/StatementImpl
+Event: 6.963 loading class com/mysql/cj/jdbc/StatementImpl done
+Event: 6.966 loading class com/mysql/cj/jdbc/ServerPreparedStatement
+Event: 6.966 loading class com/mysql/cj/jdbc/ServerPreparedStatement done
+Event: 6.968 loading class java/sql/CallableStatement
+Event: 6.969 loading class java/sql/CallableStatement done
+Event: 6.969 loading class java/sql/DatabaseMetaData
+Event: 6.970 loading class java/sql/DatabaseMetaData done
+Event: 6.970 loading class java/sql/Savepoint
+Event: 6.970 loading class java/sql/Savepoint done
+Event: 6.971 loading class java/sql/SQLXML
+Event: 6.971 loading class java/sql/SQLXML done
+Event: 6.971 loading class java/sql/SQLClientInfoException
+Event: 6.971 loading class java/sql/SQLClientInfoException done
+Event: 6.971 loading class com/mysql/cj/protocol/ProtocolEntityFactory
+Event: 6.971 loading class com/mysql/cj/protocol/ProtocolEntityFactory done
+Event: 6.973 loading class com/mysql/cj/Session
+Event: 6.973 loading class com/mysql/cj/Session done
+Event: 6.975 loading class com/mysql/cj/jdbc/ConnectionImpl$2
+Event: 6.975 loading class com/mysql/cj/jdbc/ConnectionImpl$2 done
+Event: 6.976 loading class com/mysql/cj/jdbc/IterateBlock
+Event: 6.976 loading class com/mysql/cj/jdbc/IterateBlock done
+Event: 6.976 loading class com/mysql/cj/jdbc/ConnectionImpl$3
+Event: 6.976 loading class com/mysql/cj/jdbc/ConnectionImpl$3 done
+Event: 6.977 loading class com/mysql/cj/jdbc/ConnectionImpl$4
+Event: 6.977 loading class com/mysql/cj/jdbc/ConnectionImpl$4 done
+Event: 6.977 loading class com/mysql/cj/jdbc/ConnectionImpl$1
+Event: 6.977 loading class com/mysql/cj/jdbc/ConnectionImpl$1 done
+Event: 6.978 loading class com/mysql/cj/jdbc/ConnectionImpl$5
+Event: 6.978 loading class com/mysql/cj/jdbc/ConnectionImpl$5 done
+Event: 6.979 loading class com/mysql/cj/jdbc/ConnectionImpl$6
+Event: 6.979 loading class com/mysql/cj/jdbc/ConnectionImpl$6 done
+Event: 6.979 loading class com/mysql/cj/jdbc/result/CachedResultSetMetaData
+Event: 6.979 loading class com/mysql/cj/jdbc/result/CachedResultSetMetaData done
+Event: 6.980 loading class com/mysql/cj/protocol/ColumnDefinition
+Event: 6.980 loading class com/mysql/cj/protocol/ColumnDefinition done
+Event: 6.980 loading class com/mysql/cj/protocol/ProtocolEntity
+Event: 6.980 loading class com/mysql/cj/protocol/ProtocolEntity done
+Event: 6.981 loading class com/mysql/cj/log/StandardLogger
+Event: 6.981 loading class com/mysql/cj/log/StandardLogger done
+Event: 6.981 loading class com/mysql/cj/log/Log
+Event: 6.981 loading class com/mysql/cj/log/Log done
+Event: 6.983 loading class com/mysql/cj/jdbc/JdbcPropertySetImpl
+Event: 6.983 loading class com/mysql/cj/jdbc/JdbcPropertySetImpl done
+Event: 6.983 loading class com/mysql/cj/conf/DefaultPropertySet
+Event: 6.983 loading class com/mysql/cj/conf/DefaultPropertySet done
+Event: 6.984 loading class com/mysql/cj/conf/PropertyDefinition
+Event: 6.985 loading class com/mysql/cj/conf/PropertyDefinition done
+Event: 6.985 loading class com/mysql/cj/conf/RuntimeProperty
+Event: 6.985 loading class com/mysql/cj/conf/RuntimeProperty done
+Event: 6.986 loading class com/mysql/cj/conf/PropertyDefinitions
+Event: 6.986 loading class com/mysql/cj/conf/PropertyDefinitions done
+Event: 6.988 loading class com/mysql/cj/conf/PropertyDefinitions$DatabaseTerm
+Event: 6.988 loading class com/mysql/cj/conf/PropertyDefinitions$DatabaseTerm done
+Event: 6.989 loading class com/mysql/cj/conf/PropertyDefinitions$SslMode
+Event: 6.989 loading class com/mysql/cj/conf/PropertyDefinitions$SslMode done
+Event: 6.990 loading class com/mysql/cj/conf/PropertyDefinitions$ZeroDatetimeBehavior
+Event: 6.990 loading class com/mysql/cj/conf/PropertyDefinitions$ZeroDatetimeBehavior done
+Event: 6.991 loading class com/mysql/cj/conf/PropertyDefinitions$XdevapiSslMode
+Event: 6.991 loading class com/mysql/cj/conf/PropertyDefinitions$XdevapiSslMode done
+Event: 6.991 loading class com/mysql/cj/conf/PropertyDefinitions$AuthMech
+Event: 6.991 loading class com/mysql/cj/conf/PropertyDefinitions$AuthMech done
+Event: 6.992 loading class com/mysql/cj/conf/PropertyDefinitions$Compression
+Event: 6.992 loading class com/mysql/cj/conf/PropertyDefinitions$Compression done
+Event: 6.992 loading class com/mysql/cj/conf/StringPropertyDefinition
+Event: 6.992 loading class com/mysql/cj/conf/StringPropertyDefinition done
+Event: 6.993 loading class com/mysql/cj/conf/AbstractPropertyDefinition
+Event: 6.993 loading class com/mysql/cj/conf/AbstractPropertyDefinition done
+Event: 6.994 loading class com/mysql/cj/conf/BooleanPropertyDefinition
+Event: 6.994 loading class com/mysql/cj/conf/BooleanPropertyDefinition done
+Event: 6.995 loading class com/mysql/cj/conf/EnumPropertyDefinition
+Event: 6.995 loading class com/mysql/cj/conf/EnumPropertyDefinition done
+Event: 6.997 loading class com/mysql/cj/conf/IntegerPropertyDefinition
+Event: 6.997 loading class com/mysql/cj/conf/IntegerPropertyDefinition done
+Event: 7.001 loading class com/mysql/cj/conf/MemorySizePropertyDefinition
+Event: 7.001 loading class com/mysql/cj/conf/MemorySizePropertyDefinition done
+Event: 7.004 loading class com/mysql/cj/util/PerVmServerConfigCacheFactory
+Event: 7.005 loading class com/mysql/cj/util/PerVmServerConfigCacheFactory done
+Event: 7.005 loading class com/mysql/cj/CacheAdapterFactory
+Event: 7.005 loading class com/mysql/cj/CacheAdapterFactory done
+Event: 7.006 loading class com/mysql/cj/PerConnectionLRUFactory
+Event: 7.006 loading class com/mysql/cj/PerConnectionLRUFactory done
+Event: 7.006 loading class com/mysql/cj/conf/LongPropertyDefinition
+Event: 7.006 loading class com/mysql/cj/conf/LongPropertyDefinition done
+Event: 7.008 loading class com/mysql/cj/conf/BooleanProperty
+Event: 7.008 loading class com/mysql/cj/conf/BooleanProperty done
+Event: 7.009 loading class com/mysql/cj/conf/AbstractRuntimeProperty
+Event: 7.009 loading class com/mysql/cj/conf/AbstractRuntimeProperty done
+Event: 7.010 loading class com/mysql/cj/exceptions/PropertyNotModifiableException
+Event: 7.010 loading class com/mysql/cj/exceptions/PropertyNotModifiableException done
+Event: 7.010 loading class com/mysql/cj/conf/StringProperty
+Event: 7.010 loading class com/mysql/cj/conf/StringProperty done
+Event: 7.011 loading class com/mysql/cj/conf/IntegerProperty
+Event: 7.011 loading class com/mysql/cj/conf/IntegerProperty done
+Event: 7.012 loading class com/mysql/cj/conf/EnumProperty
+Event: 7.012 loading class com/mysql/cj/conf/EnumProperty done
+Event: 7.012 loading class com/mysql/cj/conf/MemorySizeProperty
+Event: 7.012 loading class com/mysql/cj/conf/MemorySizeProperty done
+Event: 7.013 loading class com/mysql/cj/conf/LongProperty
+Event: 7.013 loading class com/mysql/cj/conf/LongProperty done
+Event: 7.014 loading class com/mysql/cj/conf/BooleanPropertyDefinition$AllowableValues
+Event: 7.014 loading class com/mysql/cj/conf/BooleanPropertyDefinition$AllowableValues done
+Event: 7.015 loading class com/mysql/cj/jdbc/result/ResultSetFactory
+Event: 7.015 loading class com/mysql/cj/jdbc/result/ResultSetFactory done
+Event: 7.015 loading class com/mysql/cj/exceptions/CJOperationNotSupportedException
+Event: 7.015 loading class com/mysql/cj/exceptions/CJOperationNotSupportedException done
+Event: 7.016 loading class com/mysql/cj/jdbc/result/ResultSetImpl
+Event: 7.016 loading class com/mysql/cj/jdbc/result/ResultSetImpl done
+Event: 7.019 loading class org/apache/tomcat/websocket/server/WsServerContainer
+Event: 7.019 loading class org/apache/tomcat/websocket/server/WsServerContainer done
+Event: 7.021 loading class org/apache/tomcat/websocket/WsWebSocketContainer
+Event: 7.021 loading class org/apache/tomcat/websocket/WsWebSocketContainer done
+Event: 7.023 loading class org/apache/tomcat/websocket/BackgroundProcess
+Event: 7.023 loading class org/apache/tomcat/websocket/BackgroundProcess done
+Event: 7.024 loading class javax/websocket/CloseReason$CloseCode
+Event: 7.024 loading class javax/websocket/CloseReason$CloseCode done
+Event: 7.024 loading class javax/net/ssl/SSLException
+Event: 7.024 loading class javax/net/ssl/SSLException done
+Event: 7.024 loading class java/util/concurrent/TimeoutException
+Event: 7.024 loading class java/util/concurrent/TimeoutException done
+Event: 7.024 loading class org/apache/tomcat/websocket/AuthenticationException
+Event: 7.024 loading class org/apache/tomcat/websocket/AuthenticationException done
+Event: 7.025 loading class org/apache/tomcat/websocket/AsyncChannelWrapper
+Event: 7.025 loading class org/apache/tomcat/websocket/AsyncChannelWrapper done
+Event: 7.030 loading class javax/websocket/EndpointConfig
+Event: 7.030 loading class javax/websocket/EndpointConfig done
+Event: 7.031 loading class org/apache/tomcat/websocket/WsRemoteEndpointImplBase
+Event: 7.031 loading class org/apache/tomcat/websocket/WsRemoteEndpointImplBase done
+Event: 7.032 loading class javax/websocket/RemoteEndpoint
+Event: 7.032 loading class javax/websocket/RemoteEndpoint done
+Event: 7.033 loading class org/apache/tomcat/websocket/WsRemoteEndpointImplClient
+Event: 7.033 loading class org/apache/tomcat/websocket/WsRemoteEndpointImplClient done
+Event: 7.033 loading class javax/websocket/Session
+Event: 7.033 loading class javax/websocket/Session done
+Event: 7.034 loading class javax/websocket/HandshakeResponse
+Event: 7.034 loading class javax/websocket/HandshakeResponse done
+Event: 7.035 loading class javax/websocket/Endpoint
+Event: 7.035 loading class javax/websocket/Endpoint done
+Event: 7.035 loading class org/apache/tomcat/websocket/pojo/PojoEndpointClient
+Event: 7.035 loading class org/apache/tomcat/websocket/pojo/PojoEndpointClient done
+Event: 7.036 loading class org/apache/tomcat/websocket/pojo/PojoEndpointBase
+Event: 7.036 loading class org/apache/tomcat/websocket/pojo/PojoEndpointBase done
+Event: 7.038 loading class org/apache/tomcat/websocket/LocalStrings
+Event: 7.038 loading class org/apache/tomcat/websocket/LocalStrings done
+Event: 7.039 loading class org/apache/tomcat/websocket/server/LocalStrings
+Event: 7.039 loading class org/apache/tomcat/websocket/server/LocalStrings done
+Event: 7.039 loading class javax/websocket/CloseReason
+Event: 7.039 loading class javax/websocket/CloseReason done
+Event: 7.040 loading class javax/websocket/CloseReason$CloseCodes
+Event: 7.040 loading class javax/websocket/CloseReason$CloseCodes done
+Event: 7.041 loading class org/apache/tomcat/websocket/Constants
+Event: 7.041 loading class org/apache/tomcat/websocket/Constants done
+Event: 7.042 loading class org/apache/tomcat/websocket/WsExtension
+Event: 7.042 loading class org/apache/tomcat/websocket/WsExtension done
+Event: 7.042 loading class javax/websocket/Extension
+Event: 7.042 loading class javax/websocket/Extension done
+Event: 7.043 loading class org/apache/tomcat/websocket/server/WsWriteTimeout
+Event: 7.043 loading class org/apache/tomcat/websocket/server/WsWriteTimeout done
+Event: 7.043 loading class java/util/concurrent/ConcurrentSkipListSet
+Event: 7.044 loading class java/util/concurrent/ConcurrentSkipListSet done
+Event: 7.044 loading class java/util/concurrent/ConcurrentNavigableMap
+Event: 7.045 loading class java/util/concurrent/ConcurrentNavigableMap done
+Event: 7.045 loading class org/apache/tomcat/websocket/server/WsWriteTimeout$EndpointComparator
+Event: 7.045 loading class org/apache/tomcat/websocket/server/WsWriteTimeout$EndpointComparator done
+Event: 7.046 loading class java/util/concurrent/ConcurrentSkipListMap
+
+
+Dynamic libraries:
+0x00007ff77cb70000 - 0x00007ff77cbb9000 	C:\Program Files\Java\bin\javaw.exe
+0x00007ffb61e80000 - 0x00007ffb62070000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffb60970000 - 0x00007ffb60a22000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffb5f170000 - 0x00007ffb5f415000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffb61d10000 - 0x00007ffb61db3000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffb60a30000 - 0x00007ffb60ace000 	C:\Windows\System32\msvcrt.dll
+0x00007ffb604d0000 - 0x00007ffb60567000 	C:\Windows\System32\sechost.dll
+0x00007ffb612a0000 - 0x00007ffb613c0000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffb60e10000 - 0x00007ffb60fa4000 	C:\Windows\System32\USER32.dll
+0x00007ffb5f770000 - 0x00007ffb5f791000 	C:\Windows\System32\win32u.dll
+0x00007ffb61540000 - 0x00007ffb61566000 	C:\Windows\System32\GDI32.dll
+0x00007ffb5f570000 - 0x00007ffb5f706000 	C:\Windows\System32\gdi32full.dll
+0x00007ffb5ef60000 - 0x00007ffb5effe000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffb5f070000 - 0x00007ffb5f16a000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffb45470000 - 0x00007ffb456f4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1256_none_9e7e379be45e40e2\COMCTL32.dll
+0x00007ffb60ad0000 - 0x00007ffb60e06000 	C:\Windows\System32\combase.dll
+0x00007ffb5eed0000 - 0x00007ffb5ef51000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffb61490000 - 0x00007ffb614be000 	C:\Windows\System32\IMM32.DLL
+0x00007ffb14870000 - 0x00007ffb14f75000 	C:\Program Files\McAfee\DLP\Agent\fcagpph64.dll
+0x00007ffb61570000 - 0x00007ffb61c57000 	C:\Windows\System32\SHELL32.dll
+0x00007ffb5f000000 - 0x00007ffb5f04a000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffb60570000 - 0x00007ffb60619000 	C:\Windows\System32\shcore.dll
+0x00007ffb5f7a0000 - 0x00007ffb5ff21000 	C:\Windows\System32\windows.storage.dll
+0x00007ffb5ed70000 - 0x00007ffb5ed93000 	C:\Windows\System32\profapi.dll
+0x00007ffb5eda0000 - 0x00007ffb5edea000 	C:\Windows\System32\powrprof.dll
+0x00007ffb5ed20000 - 0x00007ffb5ed30000 	C:\Windows\System32\UMPDC.dll
+0x00007ffb614c0000 - 0x00007ffb61512000 	C:\Windows\System32\shlwapi.dll
+0x00007ffb5ed50000 - 0x00007ffb5ed61000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffb5f050000 - 0x00007ffb5f067000 	C:\Windows\System32\cryptsp.dll
+0x00007ffb60640000 - 0x00007ffb60797000 	C:\Windows\System32\ole32.dll
+0x00007ffb5ff30000 - 0x00007ffb5fff5000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ffb4ada0000 - 0x00007ffb4ae29000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x00007ffb5eea0000 - 0x00007ffb5eec6000 	C:\Windows\System32\bcrypt.dll
+0x00007ffb5de60000 - 0x00007ffb5de6a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffb57440000 - 0x00007ffb57530000 	C:\Windows\SYSTEM32\PROPSYS.dll
+0x00007ffb5e280000 - 0x00007ffb5e2ba000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ffb5ec30000 - 0x00007ffb5ec67000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ffb5db90000 - 0x00007ffb5dbc1000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x00007ffb577c0000 - 0x00007ffb57864000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPApi.dll
+0x00007ffb5f710000 - 0x00007ffb5f76c000 	C:\Windows\System32\WINTRUST.dll
+0x00007ffb5ed30000 - 0x00007ffb5ed42000 	C:\Windows\System32\MSASN1.dll
+0x0000000002dc0000 - 0x0000000002f09000 	C:\Windows\System32\CRYPT32.dll
+0x0000000059dd0000 - 0x0000000059ddc000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPThe.dll
+0x0000000059800000 - 0x00000000598d2000 	C:\Program Files\Java\jre\bin\msvcr100.dll
+0x000000005adb0000 - 0x000000005b673000 	C:\Program Files\Java\jre\bin\server\jvm.dll
+0x00007ffb61530000 - 0x00007ffb61538000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffb46fd0000 - 0x00007ffb46fd9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffb61010000 - 0x00007ffb6107f000 	C:\Windows\System32\WS2_32.dll
+0x00007ffb58330000 - 0x00007ffb58354000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffb58300000 - 0x00007ffb5832d000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffb3eae0000 - 0x00007ffb3eaef000 	C:\Program Files\Java\jre\bin\verify.dll
+0x00007ffb3eab0000 - 0x00007ffb3ead9000 	C:\Program Files\Java\jre\bin\java.dll
+0x00007ffb3ea90000 - 0x00007ffb3eaa6000 	C:\Program Files\Java\jre\bin\zip.dll
+0x00007ffb3e8c0000 - 0x00007ffb3e8cd000 	C:\Program Files\Java\jre\bin\management.dll
+0x00007ffb39a40000 - 0x00007ffb39a5a000 	C:\Program Files\Java\jre\bin\net.dll
+0x00007ffb5e570000 - 0x00007ffb5e5d7000 	C:\Windows\system32\mswsock.dll
+0x00007ffb39a20000 - 0x00007ffb39a31000 	C:\Program Files\Java\jre\bin\nio.dll
+0x00007ffb3e800000 - 0x00007ffb3e816000 	C:\Windows\system32\napinsp.dll
+0x00007ffb3e7e0000 - 0x00007ffb3e7fa000 	C:\Windows\system32\pnrpnsp.dll
+0x00007ffb5e2c0000 - 0x00007ffb5e38b000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x00007ffb607a0000 - 0x00007ffb607a8000 	C:\Windows\System32\NSI.dll
+0x00007ffb3e7a0000 - 0x00007ffb3e7ae000 	C:\Windows\System32\winrnr.dll
+0x00007ffb58190000 - 0x00007ffb581ac000 	C:\Windows\system32\NLAapi.dll
+0x00007ffb3e780000 - 0x00007ffb3e795000 	C:\Windows\system32\wshbth.dll
+0x00007ffb531b0000 - 0x00007ffb531ba000 	C:\Windows\System32\rasadhlp.dll
+0x00007ffb57a00000 - 0x00007ffb57a77000 	C:\Windows\System32\fwpuclnt.dll
+0x00007ffb5e080000 - 0x00007ffb5e0b3000 	C:\Windows\system32\rsaenh.dll
+0x00007ffb5ec00000 - 0x00007ffb5ec25000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ffb5e740000 - 0x00007ffb5e74c000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x00007ffb56c90000 - 0x00007ffb56ca6000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x00007ffb56880000 - 0x00007ffb5689c000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=49636 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=exam-server -Dfile.encoding=UTF-8 
+java_command: com.exam.examserver.ExamServerApplication
+java_class_path (initial): D:\Users\stapade\Desktop\Spring-boot projects\exam-server\target\classes;D:\Users\stapade\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.4.5\spring-boot-starter-data-jpa-2.4.5.jar;D:\Users\stapade\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.4.5\spring-boot-starter-aop-2.4.5.jar;D:\Users\stapade\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;D:\Users\stapade\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.4.5\spring-boot-starter-jdbc-2.4.5.jar;D:\Users\stapade\.m2\repository\com\zaxxer\HikariCP\3.4.5\HikariCP-3.4.5.jar;D:\Users\stapade\.m2\repository\org\springframework\spring-jdbc\5.3.6\spring-jdbc-5.3.6.jar;D:\Users\stapade\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;D:\Users\stapade\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;D:\Users\stapade\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;D:\Users\stapade\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;D:\Users\stapade\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;D:\Users\stapade\.m2\repository\net\bytebuddy\byte-buddy\1.10.22\byte-buddy-1.10.22.jar;D:\Users\stapade\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;D:\Users\stapade\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;D:\Users\stapade\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;D:\Users\stapade\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;D:\Users\stapade\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;D:\Users\stapade\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.4\jaxb-runtime-2.3.4.jar;D:\Users\stapade\.m2\repository\org\glassfish\jaxb\txw2\2.3.4\txw2-2.3.4.jar;D:\Users\stapade\.m2\repository
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java
+PATH=D:/Users/stapade/Desktop/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507/jre/bin/server;D:/Users/stapade/Desktop/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507/jre/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;D:\Users\stapade\AppData\Local\Microsoft\WindowsApps;D:\Users\stapade\AppData\Roaming\npm;D:\Users\stapade\AppData\Local\Programs\Git\cmd;D:\Users\stapade\Desktop\eclipse;
+USERNAME=stapade
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.1110)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 11, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16551892k(1264996k free), swap 16551892k(50872k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.242-b08) for windows-amd64 JRE (1.8.0_242-b08), built on Jan 18 2020 10:32:32 by "VssAdministrator" with MS VC++ 10.0 (VS2010)
+
+time: Tue Oct 12 23:02:50 2021
+timezone: India Standard Time
+elapsed time: 7 seconds (0d 0h 0m 7s)
+

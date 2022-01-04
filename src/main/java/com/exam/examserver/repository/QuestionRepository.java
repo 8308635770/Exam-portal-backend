@@ -13,6 +13,7 @@ import com.exam.examserver.entity.Quiz;
 public interface QuestionRepository extends JpaRepository<Question,Long>{
 
 	public Set<Question> findByQuiz(Quiz quiz);
+	
 
 	
 	

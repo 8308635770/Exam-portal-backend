@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -24,6 +25,7 @@ public class Question {
 	private String option2;
 	private String option3;
 	private String option4;
+//	@Transient
 	private String answer;
 	
 	@ManyToOne(fetch = FetchType.EAGER)

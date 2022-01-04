@@ -53,6 +53,7 @@ public class AuthenticateController {
 		}
 		
 		UserDetails userDetails= this.userSecurityService.loadUserByUsername(jwtRequest.getUsername());
+		
 		String token=this.jwtUtil.generateToken(userDetails);
 		return ResponseEntity.ok(new JwtResponse(token));
 		
@@ -76,7 +77,7 @@ public class AuthenticateController {
 		} catch (DisabledException e) {
 			throw new Exception("User disabled "+e);
 		}catch (BadCredentialsException e) {
-			throw new Exception("Invalid Credentials "+e.getMessage());
+			throw new Exception("Invalid Credentials... "+e.getMessage());
 		}
 		
 	}

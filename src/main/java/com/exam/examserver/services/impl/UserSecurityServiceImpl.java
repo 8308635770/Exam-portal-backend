@@ -21,7 +21,7 @@ public class UserSecurityServiceImpl implements UserDetailsService {
 		// TODO Auto-generated method stub
 		User user=this.userRepo.findByUsername(username);
 		if(user==null) {
-			System.out.println("User not found");
+			System.out.println("User not found..");
 			throw new UsernameNotFoundException("No user found !!");
 			
 		}

@@ -10,7 +10,5 @@ import com.exam.examserver.entity.Category;
 public interface CategoryRepository extends JpaRepository<Category,Long>{
 	
 	
-	
-	
 
 }
